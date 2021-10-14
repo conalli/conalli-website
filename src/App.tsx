@@ -13,16 +13,16 @@ function App() {
   return (
     <div className="app">
       <div className="home" ref={homeRef}>
-        <button onClick={() => scrollHandler(projectsRef)}></button>
+        <button onClick={() => scrollHandler(projectsRef)}>Projects</button>
         <Home />
       </div>
       <div className="projects" ref={projectsRef}>
-        <button onClick={() => scrollHandler(homeRef)}></button>
+        <button onClick={() => scrollHandler(homeRef)}>Home</button>
         <Projects />
-        <button onClick={() => scrollHandler(contactsRef)}></button>
+        <button onClick={() => scrollHandler(contactsRef)}>Contact</button>
       </div>
       <div className="contacts" ref={contactsRef}>
-        <button onClick={() => scrollHandler(projectsRef)}></button>
+        <button onClick={() => scrollHandler(projectsRef)}>Projects</button>
         <Contact />
       </div>
     </div>

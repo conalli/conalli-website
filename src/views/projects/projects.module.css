@@ -12,3 +12,8 @@
   justify-content: center;
   scroll-snap-align: start;
 }
+
+div > button {
+  height: 100px;
+  width: 100px;
+}
