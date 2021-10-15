@@ -3,7 +3,7 @@ import { Projects } from "./views/projects";
 import { Contact } from "./views/contact";
 import "./App.css";
 import { useRef } from "react";
-import { scrollHandler } from "./utils/scrollHandler";
+import { ViewLayout } from "./components/ViewLayout";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -13,17 +13,22 @@ function App() {
   return (
     <div className="app">
       <div className="home" ref={homeRef}>
-        <button onClick={() => scrollHandler(projectsRef)}>Projects</button>
-        <Home />
+        <ViewLayout bottom={{ label: "Projects", ref: projectsRef }}>
+          <Home />
+        </ViewLayout>
       </div>
       <div className="projects" ref={projectsRef}>
-        <button onClick={() => scrollHandler(homeRef)}>Home</button>
-        <Projects />
-        <button onClick={() => scrollHandler(contactsRef)}>Contact</button>
+        <ViewLayout
+          top={{ label: "Home", ref: homeRef }}
+          bottom={{ label: "Contact", ref: contactsRef }}
+        >
+          <Projects />
+        </ViewLayout>
       </div>
       <div className="contacts" ref={contactsRef}>
-        <button onClick={() => scrollHandler(projectsRef)}>Projects</button>
-        <Contact />
+        <ViewLayout top={{ label: "Projects", ref: projectsRef }}>
+          <Contact />
+        </ViewLayout>
       </div>
     </div>
   );
