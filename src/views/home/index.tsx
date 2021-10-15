@@ -1,33 +1,38 @@
+import { Linkedin } from "./components/spanComponents/LinkedinSpan";
+import { Location } from "./components/spanComponents/LocationSpan";
+import { Github } from "./components/spanComponents/GithubSpan";
+import { Food } from "./components/spanComponents/FoodSpan";
+import { Sleep } from "./components/spanComponents/SleepSpan";
 import classes from "./home.module.css";
+
 export const Home = () => {
   return (
     <div className={classes.homeContainer}>
       <div className={classes.circleContainer}>
         <div className={classes.circle}>
           <div className={classes.circleText}>
-            <span>{`const Conall = me; const Conall = me; const Conall = me;`}</span>
-            <span>{`let atHome = "Tokyo, Japan."; let atHome = "Tokyo, Japan.";`}</span>
-            <span>{`while (building) {Conall.code();} while (building) {Conall.code();}`}</span>
-            <span>{`if (hungry) {Conall.eat();} if (hungry) {Conall.eat();}`}</span>
-            <span>{`else {Conall.sleep();} else {Conall.sleep()} else {Conall.sleep()} `}</span>
-            <span>{`const Conall = me; const Conall = me; const Conall = me;`}</span>
-            <span>{`let atHome = "Tokyo, Japan."; let atHome = "Tokyo, Japan.";`}</span>
-            <span>{`while (building) {Conall.code();} while (building) {Conall.code();}`}</span>
-            <span>{`if (hungry) {Conall.eat();} if (hungry) {Conall.eat();}`}</span>
-            <span>{`else {Conall.sleep();} else {Conall.sleep()} else {Conall.sleep()} `}</span>
-            <span>{`const Conall = me; const Conall = me; const Conall = me;`}</span>
-            <span>{`let atHome = "Tokyo, Japan."; let atHome = "Tokyo, Japan.";`}</span>
-            <span>{`while (building) {Conall.code();} while (building) {Conall.code();}`}</span>
-            <span>{`if (hungry) {Conall.eat();} if (hungry) {Conall.eat();}`}</span>
-            <span>{`else {Conall.sleep();} else {Conall.sleep()} else {Conall.sleep()} `}</span>
-            <span>{`const Conall = me; const Conall = me; const Conall = me;`}</span>
-            <span>{`let atHome = "Tokyo, Japan."; let atHome = "Tokyo, Japan.";`}</span>
-            <span>{`while (building) {Conall.code();} while (building) {Conall.code();}`}</span>
-            <span>{`if (hungry) {Conall.eat();} if (hungry) {Conall.eat();}`}</span>
-            <span>{`else {Conall.sleep();} else {Conall.sleep()} else {Conall.sleep()} `}</span>
-            <span>{`const Conall = me; const Conall = me; const Conall = me;`}</span>
-            <span>{`let atHome = "Tokyo, Japan."; let atHome = "Tokyo, Japan.";`}</span>
-            <span>{`while (building) {Conall.code();} while (building) {Conall.code();}`}</span>
+            <Linkedin />
+            <Location />
+            <Github />
+            <Food />
+            <Sleep />
+            <Linkedin />
+            <Location />
+            <Github />
+            <Food />
+            <Sleep />
+            <Linkedin />
+            <Location />
+            <Github />
+            <Food />
+            <Sleep />
+            <Linkedin />
+            <Location />
+            <Github />
+            <Food />
+            <Sleep />
+            <Linkedin />
+            <Location />
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@
   width: 300px;
   border-radius: 50%;
   overflow: hidden;
-  color: red;
+  color: rgba(253, 74, 74, 0.8);
   font-size: 1em;
   font-weight: bold;
   margin: 0;
@@ -56,4 +56,16 @@
 .circleText > span {
   white-space: nowrap;
   font-size: 0.5em;
+}
+
+.circleText:hover {
+  color: rgba(192, 61, 61, 0.5);
+}
+
+.circleLink {
+  color: rgba(253, 74, 74, 1);
+}
+
+.circleLink:hover {
+  color: rgba(253, 74, 74, 1);
 }
