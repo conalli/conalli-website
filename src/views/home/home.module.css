@@ -5,11 +5,19 @@
   width: 100%;
 }
 
+.circleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 70%;
+}
+
 .circle {
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 50%;
+  width: 300px;
   border-radius: 50%;
   overflow: hidden;
   color: red;
@@ -22,4 +30,30 @@
   content: "";
   padding-bottom: 100%;
   display: block;
+}
+
+@media screen and (min-width: 700px) {
+  .circle {
+    width: 600px;
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .circle {
+    width: 900px;
+    font-size: 3em;
+  }
+}
+
+.circleText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.circleText > span {
+  white-space: nowrap;
+  font-size: 0.5em;
 }
