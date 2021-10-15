@@ -1,0 +1,25 @@
+.homeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  color: red;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.circle:after {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
