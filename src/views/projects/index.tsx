@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { scrollHandler } from "../../utils/scrollHandler";
 import { Project1 } from "./components/project1";
 import { Project2 } from "./components/project2";
@@ -6,36 +6,45 @@ import { Project3 } from "./components/project3";
 import { Project4 } from "./components/project4";
 import classes from "./projects.module.css";
 export const Projects = () => {
-  const projects = useRef<HTMLDivElement>(null);
-  const project1 = useRef<HTMLDivElement>(null);
-  const project2 = useRef<HTMLDivElement>(null);
-  const project3 = useRef<HTMLDivElement>(null);
-  const project4 = useRef<HTMLDivElement>(null);
+  const [projectPage, setProjectPage] = useState<number>(0);
+  const clickHandler = (nextProject: number) => {
+    setProjectPage(nextProject);
+  };
   return (
     <div className={classes.projectsContainer}>
-      <div className={classes.projects} ref={projects}>
-        <h1>Projects</h1>
-        <button onClick={() => scrollHandler(project1)}>Project1</button>
-      </div>
-      <div className={classes.project1} ref={project1}>
-        <button onClick={() => scrollHandler(projects)}>Projects</button>
-        <Project1 />
-        <button onClick={() => scrollHandler(project2)}>Project2</button>
-      </div>
-      <div className={classes.project2} ref={project2}>
-        <button onClick={() => scrollHandler(project1)}>Project1</button>
-        <Project2 />
-        <button onClick={() => scrollHandler(project3)}>Project3</button>
-      </div>
-      <div className={classes.project3} ref={project3}>
-        <button onClick={() => scrollHandler(project2)}>Project2</button>
-        <Project3 />
-        <button onClick={() => scrollHandler(project4)}>Project4</button>
-      </div>
-      <div className={classes.project4} ref={project4}>
-        <button onClick={() => scrollHandler(project3)}>Project3</button>
-        <Project4 />
-      </div>
+      {projectPage == 0 && (
+        <div className={classes.projects}>
+          <h1>Projects</h1>
+          <button onClick={() => clickHandler(1)}>Project1</button>
+        </div>
+      )}
+      {projectPage == 1 && (
+        <div className={classes.project1}>
+          <button onClick={() => clickHandler(0)}>Projects</button>
+          <Project1 />
+          <button onClick={() => clickHandler(2)}>Project2</button>
+        </div>
+      )}
+      {projectPage == 2 && (
+        <div className={classes.project2}>
+          <button onClick={() => clickHandler(1)}>Project1</button>
+          <Project2 />
+          <button onClick={() => clickHandler(3)}>Project3</button>
+        </div>
+      )}
+      {projectPage == 3 && (
+        <div className={classes.project3}>
+          <button onClick={() => clickHandler(2)}>Project2</button>
+          <Project3 />
+          <button onClick={() => clickHandler(4)}>Project4</button>
+        </div>
+      )}
+      {projectPage == 4 && (
+        <div className={classes.project4}>
+          <button onClick={() => clickHandler(3)}>Project3</button>
+          <Project4 />
+        </div>
+      )}
     </div>
   );
 };
