@@ -5,7 +5,7 @@ import { Food } from "./components/spanComponents/FoodSpan";
 import { Sleep } from "./components/spanComponents/SleepSpan";
 import classes from "./home.module.scss";
 
-export const Home = () => {
+export const Home: React.FC = () => {
   return (
     <div className={classes.homeContainer}>
       <div className={classes.circleContainer}>

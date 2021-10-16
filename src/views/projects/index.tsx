@@ -4,7 +4,8 @@ import { Project2 } from "./components/project2";
 import { Project3 } from "./components/project3";
 import { Project4 } from "./components/project4";
 import classes from "./projects.module.scss";
-export const Projects = () => {
+
+export const Projects: React.FC = () => {
   const [projectPage, setProjectPage] = useState<number>(0);
   const clickHandler = (nextProject: number) => {
     setProjectPage(nextProject);
