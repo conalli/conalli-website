@@ -8,13 +8,37 @@
 }
 
 .top {
-  height: 10%;
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
-  height: 80%;
+  height: 90%;
+  display: flex;
 }
 
 .bottom {
-  height: 10%;
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top:hover,
+.bottom:hover {
+  cursor: pointer;
+}
+
+.topArrow,
+.bottomArrow {
+  opacity: 0.5;
+}
+
+.topArrow:hover,
+.bottomArrow:hover {
+  opacity: 1;
 }
