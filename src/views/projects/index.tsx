@@ -1,10 +1,9 @@
-import { useRef, useState } from "react";
-import { scrollHandler } from "../../utils/scrollHandler";
+import { useState } from "react";
 import { Project1 } from "./components/project1";
 import { Project2 } from "./components/project2";
 import { Project3 } from "./components/project3";
 import { Project4 } from "./components/project4";
-import classes from "./projects.module.css";
+import classes from "./projects.module.scss";
 export const Projects = () => {
   const [projectPage, setProjectPage] = useState<number>(0);
   const clickHandler = (nextProject: number) => {

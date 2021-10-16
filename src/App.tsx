@@ -1,7 +1,7 @@
 import { Home } from "./views/home";
 import { Projects } from "./views/projects";
 import { Contact } from "./views/contact";
-import "./App.css";
+import "./App.scss";
 import { useRef } from "react";
 import { ViewLayout } from "./components/ViewLayout";
 

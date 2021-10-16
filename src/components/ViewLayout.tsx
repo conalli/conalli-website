@@ -2,8 +2,7 @@ import { RefObject } from "react";
 import { scrollHandler } from "../utils/scrollHandler";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import classes from "./ViewLayout.module.css";
-import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
+import classes from "./ViewLayout.module.scss";
 
 export type ShowButton = {
   label: string;

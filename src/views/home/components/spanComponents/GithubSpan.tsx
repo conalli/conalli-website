@@ -1,4 +1,4 @@
-import classes from "../../home.module.css";
+import classes from "../../home.module.scss";
 export const Github: React.FC = () => {
   return (
     <span>

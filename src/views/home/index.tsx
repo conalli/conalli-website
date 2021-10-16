@@ -3,7 +3,7 @@ import { Location } from "./components/spanComponents/LocationSpan";
 import { Github } from "./components/spanComponents/GithubSpan";
 import { Food } from "./components/spanComponents/FoodSpan";
 import { Sleep } from "./components/spanComponents/SleepSpan";
-import classes from "./home.module.css";
+import classes from "./home.module.scss";
 
 export const Home = () => {
   return (
