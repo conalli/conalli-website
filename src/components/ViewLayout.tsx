@@ -1,6 +1,9 @@
 import { RefObject } from "react";
 import { scrollHandler } from "../utils/scrollHandler";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import classes from "./ViewLayout.module.css";
+import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 
 export type ShowButton = {
   label: string;
@@ -19,17 +22,24 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
 }) => {
   return (
     <div className={classes.layoutContainer}>
-      <div className={classes.top}>
+      <div
+        className={classes.top}
+        onClick={() => top && scrollHandler(top.ref)}
+      >
         {top && (
-          <button onClick={() => scrollHandler(top.ref)}>{top.label}</button>
+          <KeyboardArrowUpIcon className={classes.topArrow} fontSize="large" />
         )}
       </div>
       <div className={classes.content}>{children}</div>
-      <div className={classes.bottom}>
+      <div
+        className={classes.bottom}
+        onClick={() => bottom && scrollHandler(bottom.ref)}
+      >
         {bottom && (
-          <button onClick={() => scrollHandler(bottom.ref)}>
-            {bottom.label}
-          </button>
+          <KeyboardArrowDownIcon
+            className={classes.topArrow}
+            fontSize="large"
+          />
         )}
       </div>
     </div>
