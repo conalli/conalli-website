@@ -9,8 +9,9 @@ import { Sleep } from "./SVGTextComponents/SleepSpan";
 export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
   circleRef,
 }) => {
-  const [circleDimensions, setCircleDimensions] = useState(300);
-  const [fontSize, setFontSize] = useState(50);
+  const [circleDimensions, setCircleDimensions] = useState(
+    window.innerHeight / 1.4
+  );
 
   console.log(circleDimensions);
 
@@ -35,10 +36,16 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
     <Github />,
     <Food />,
     <Sleep />,
+    <Linkedin />,
+    <Location />,
+    <Github />,
+    <Food />,
+    <Sleep />,
   ];
 
   useEffect(() => {
     setCircleDimensions((prev) => {
+      console.log("called");
       return circleRef.current
         ? Math.min(
             circleRef.current.offsetWidth,
@@ -59,7 +66,7 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
         return (
           <text
             x="50%"
-            dy={`${idx * (100 / textOrder.length) + 3}%`}
+            dy={`${idx * 5 + 3}%`}
             fill="red"
             textAnchor="middle"
             key={idx}
