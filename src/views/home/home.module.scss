@@ -97,8 +97,8 @@
     align-self: center;
     display: flex;
     align-items: center;
-    // justify-content: center;
-    width: 100%;
+    justify-content: center;
+    width: min(100%, 50vw);
     height: 100%;
   }
 }

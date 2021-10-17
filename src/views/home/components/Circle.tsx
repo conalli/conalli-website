@@ -25,6 +25,16 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
     <Github />,
     <Food />,
     <Sleep />,
+    <Linkedin />,
+    <Location />,
+    <Github />,
+    <Food />,
+    <Sleep />,
+    <Linkedin />,
+    <Location />,
+    <Github />,
+    <Food />,
+    <Sleep />,
   ];
 
   useEffect(() => {
@@ -38,12 +48,6 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
     });
   }, []);
 
-  useEffect(() => {
-    setFontSize((prev) => {
-      return circleDimensions ? circleDimensions / textOrder.length : prev;
-    });
-  }, [circleDimensions]);
-
   return (
     <svg
       viewBox="0 0 100 100"
@@ -53,7 +57,13 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
     >
       {textOrder.map((val, idx) => {
         return (
-          <text x="50%" dy="10%" fill="red" textAnchor="middle" key={idx}>
+          <text
+            x="50%"
+            dy={`${idx * (100 / textOrder.length) + 3}%`}
+            fill="red"
+            textAnchor="middle"
+            key={idx}
+          >
             {val}
           </text>
         );

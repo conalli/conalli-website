@@ -1,6 +1,6 @@
 .circle {
-  border-radius: 50%;
   width: 90%;
+  clip-path: circle(50%);
 
   .circleText {
     width: 100%;
@@ -8,9 +8,10 @@
     flex-direction: column;
     justify-content: center;
     fill: rgba(253, 74, 74, 0.8);
-    font-size: 3rem;
+    font-size: 30%;
     font-weight: bold;
     overflow: hidden;
+    clip-path: circle(50% at center);
 
     a:link,
     a:visited {
