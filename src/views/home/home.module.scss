@@ -2,14 +2,14 @@
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 5% 1fr 30% 30% 1fr 5%;
-  grid-template-rows: 0.5fr 1fr 2fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 2fr 1.5fr;
   align-items: center;
   justify-content: center;
   width: 100%;
 
-  h1 {
+  .title {
     justify-self: start;
-    grid-column: 2 / 4;
+    grid-column: 2 / 5;
     grid-row: 1 / 2;
     background-color: black;
     color: white;
@@ -17,17 +17,29 @@
     margin: 0;
   }
 
-  h3 {
+  .subTitle {
     justify-self: start;
     align-self: start;
     grid-column: 2 / 5;
-    grid-row: 2 / 3;
+    grid-row: 2;
     background-color: black;
     color: white;
     font-size: 1rem;
-    float: left;
     z-index: 1;
     margin: 0;
+  }
+
+  .textBody {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    justify-self: start;
+    align-self: end;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 1;
+    margin: 0 0 2rem;
   }
 
   .japaneseTitle {
@@ -38,8 +50,11 @@
     justify-self: center;
     align-self: start;
     font-size: 1rem;
+    font-weight: bold;
+    color: white;
     background-color: rgba(253, 74, 74, 0.8);
   }
+
   .japaneseSubtitle {
     writing-mode: vertical-rl;
     grid-column: 5;
@@ -48,42 +63,60 @@
     justify-self: start;
     align-self: start;
     font-size: 1rem;
+    font-weight: bold;
+    color: white;
     background-color: rgba(253, 74, 74, 0.8);
   }
 
   @media screen and (min-width: 700px) {
-    h1 {
+    .title {
       font-size: 3rem;
+      grid-column: 2 / 4;
     }
-    h3 {
+    .subTitle {
       font-size: 1.8rem;
+    }
+    .textBody {
+      font-size: 1.3rem;
     }
     .japaneseTitle {
       font-size: 2rem;
+    }
+    .japaneseSubtitle {
+      font-size: 1.7rem;
     }
   }
 
   @media screen and (min-width: 1000px) {
-    h1 {
+    .title {
       font-size: 5rem;
     }
-    h3 {
+    .subTitle {
       font-size: 2rem;
+    }
+    .textBody {
+      font-size: 1.4rem;
     }
     .japaneseTitle {
       font-size: 3rem;
+    }
+    .japaneseSubtitle {
+      font-size: 2rem;
     }
   }
 
   @media screen and (min-width: 1500px) {
-    h1 {
+    .title {
       font-size: 6rem;
     }
-    h3 {
+    .subTitle {
       font-size: 3rem;
     }
+    .textBody {
+      font-size: 1.5rem;
+    }
     .japaneseTitle {
-      font-size: 3.5rem;
+      font-size: 4rem;
     }
     .japaneseSubtitle {
       font-size: 2.25rem;
@@ -98,7 +131,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: min(100%, 50vw);
     height: 100%;
+    width: auto;
+    position: fixed;
   }
 }
