@@ -1,0 +1,33 @@
+.circle {
+  border-radius: 50%;
+  width: 90%;
+
+  .circleText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    fill: rgba(253, 74, 74, 0.8);
+    font-size: 3rem;
+    font-weight: bold;
+    overflow: hidden;
+
+    a:link,
+    a:visited {
+      cursor: pointer;
+    }
+
+    &:hover {
+      fill: rgba(192, 61, 61, 0.5);
+    }
+
+    .circleLink {
+      fill: rgba(253, 74, 74, 1);
+      text-decoration: underline;
+
+      &:hover {
+        fill: rgba(253, 74, 74, 1);
+      }
+    }
+  }
+}
