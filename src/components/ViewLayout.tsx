@@ -6,7 +6,6 @@ import classes from "./ViewLayout.module.scss";
 
 export type ShowButton = {
   label: string;
-  ref: RefObject<HTMLElement>;
 };
 
 export type ViewLayoutProps = {
@@ -23,21 +22,15 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
     // TODO: Change styling for no top or bottom components
     <div className={classes.layoutContainer}>
       {top && (
-        <div
-          className={classes.top}
-          onClick={() => top && scrollHandler(top.ref)}
-        >
+        <div className={classes.top}>
           <KeyboardArrowUpIcon className={classes.topArrow} fontSize="large" />
         </div>
       )}
       <div className={classes.content}>{children}</div>
       {bottom && (
-        <div
-          className={classes.bottom}
-          onClick={() => bottom && scrollHandler(bottom.ref)}
-        >
+        <div className={classes.bottom}>
           <KeyboardArrowDownIcon
-            className={classes.topArrow}
+            className={classes.bottomArrow}
             fontSize="large"
           />
         </div>
