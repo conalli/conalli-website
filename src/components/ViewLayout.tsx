@@ -3,6 +3,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import classes from "./ViewLayout.module.scss";
 import { multi } from "../utils/multiClass";
+import { motion } from "framer-motion";
 
 export type ShowButton = {
   linkTo: string;
@@ -38,18 +39,20 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
         {children}
       </div>
       {bottom && (
-        <div className={classes.bottom}>
-          <button
+        <motion.div className={classes.bottom}>
+          <motion.button
             className={multi(classes.scrollBtn, classes.scrollDown)}
             onClick={() => history.push(`/${bottom.linkTo}`)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             scroll down
-          </button>
+          </motion.button>
           <KeyboardArrowDownIcon
             className={classes.bottomArrow}
             fontSize="large"
           />
-        </div>
+        </motion.div>
       )}
     </div>
   );
