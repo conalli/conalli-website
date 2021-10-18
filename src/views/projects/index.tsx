@@ -12,7 +12,11 @@ export const Projects: React.FC = () => {
     setProjectPage(nextProject);
   };
   return (
-    <ViewLayout top={{ linkTo: "" }} bottom={{ linkTo: "contact" }}>
+    <ViewLayout
+      top={{ linkTo: "" }}
+      bottom={{ linkTo: "contact" }}
+      transitionBackground={{ one: "green", two: "wheat" }}
+    >
       <div className={classes.projectsContainer}>
         {projectPage == 0 && (
           <div className={classes.projects}>

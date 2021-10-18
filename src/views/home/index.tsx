@@ -52,7 +52,10 @@ export const Home: React.FC = () => {
   };
 
   return (
-    <ViewLayout bottom={{ linkTo: "projects" }}>
+    <ViewLayout
+      bottom={{ linkTo: "projects" }}
+      transitionBackground={{ one: "yellow", two: "blue" }}
+    >
       <motion.div className={classes.homeContainer}>
         <motion.h1
           className={classes.title}
