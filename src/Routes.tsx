@@ -8,20 +8,14 @@ export const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/">
-          <ViewLayout bottom={{ label: "Projects" }}>
-            <Home />
-          </ViewLayout>
+        <Route exact path="/">
+          <Home />
         </Route>
-        <Route path="/projects">
-          <ViewLayout top={{ label: "Home" }} bottom={{ label: "Contact" }}>
-            <Projects />
-          </ViewLayout>
+        <Route exact path="/projects">
+          <Projects />
         </Route>
-        <Route path="/contact">
-          <ViewLayout top={{ label: "Projects" }}>
-            <Contact />
-          </ViewLayout>
+        <Route exact path="/contact">
+          <Contact />
         </Route>
       </Switch>
     </Router>

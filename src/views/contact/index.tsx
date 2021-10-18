@@ -1,3 +1,9 @@
+import { ViewLayout } from "../../components/ViewLayout";
+
 export const Contact: React.FC = () => {
-  return <div>Contact</div>;
+  return (
+    <ViewLayout top={{ linkTo: "projects" }}>
+      <div>Contact</div>
+    </ViewLayout>
+  );
 };
