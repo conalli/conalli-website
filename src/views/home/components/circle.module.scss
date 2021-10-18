@@ -40,20 +40,16 @@
     font-size: 35%;
     font-weight: bold;
     overflow: hidden;
-    // clip-path: circle(50% at center);
 
     a:link,
-    a:visited {
+    a:visited,
+    a:active {
       cursor: pointer;
     }
 
     .circleLink {
       fill: rgba(253, 74, 74, 1);
       text-decoration: underline;
-
-      &:hover {
-        fill: rgba(253, 74, 74, 1);
-      }
     }
   }
 }
