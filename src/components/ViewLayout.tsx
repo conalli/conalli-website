@@ -2,6 +2,7 @@ import { useHistory } from "react-router";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import classes from "./ViewLayout.module.scss";
+import { multi } from "../utils/multiClass";
 
 export type ShowButton = {
   linkTo: string;
@@ -25,7 +26,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
       {top && (
         <div className={classes.top}>
           <button
-            className={classes.scrollDown}
+            className={multi(classes.scrollBtn)}
             onClick={() => history.push(`/${top.linkTo}`)}
           >
             Scroll Up
@@ -39,10 +40,10 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
       {bottom && (
         <div className={classes.bottom}>
           <button
-            className={classes.scrollDown}
+            className={multi(classes.scrollBtn, classes.scrollDown)}
             onClick={() => history.push(`/${bottom.linkTo}`)}
           >
-            Scroll Down
+            scroll down
           </button>
           <KeyboardArrowDownIcon
             className={classes.bottomArrow}

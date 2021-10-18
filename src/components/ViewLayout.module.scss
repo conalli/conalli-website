@@ -6,6 +6,20 @@
   justify-content: center;
   align-items: center;
 
+  .scrollBtn {
+    height: min(15vh, 15vw);
+    width: min(15vh, 15vw);
+    right: 10%;
+    border-radius: 50%;
+    border-style: none;
+    position: fixed;
+    font-weight: bold;
+    text-decoration: underline 0.2rem black;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .top {
     height: 5%;
     width: 100%;
@@ -39,23 +53,30 @@
     background-color: rgba(253, 74, 74, 0.8);
 
     .scrollDown {
-      height: min(15vh, 15vw);
-      width: min(15vh, 15vw);
-      border-radius: 50%;
-      border-style: none;
-      position: fixed;
       bottom: 2.5%;
-      right: 10%;
       background: repeating-linear-gradient(
-        45deg,
-        black,
-        black 9%,
-        rgba(253, 74, 74, 0.8),
-        rgba(253, 74, 74, 0.8) 10%
-      );
-      color: white;
+          45deg,
+          transparent,
+          transparent 9%,
+          rgba(253, 74, 74, 0.8),
+          rgba(253, 74, 74, 0.8) 10%
+        ),
+        repeating-linear-gradient(
+          135deg,
+          transparent,
+          transparent 9%,
+          rgba(253, 74, 74, 0.8),
+          rgba(253, 74, 74, 0.8) 10%
+        ),
+        repeating-linear-gradient(
+          0deg,
+          white,
+          white 9%,
+          rgba(253, 74, 74, 0.8),
+          rgba(253, 74, 74, 0.8) 10%
+        );
+      color: black;
       font-size: 1.5rem;
-      font-weight: bold;
     }
 
     .bottomArrow {
