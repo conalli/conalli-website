@@ -72,16 +72,6 @@
     grid-row: 5;
     justify-self: start;
     align-self: center;
-    font-weight: bold;
-
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        font-size: 1.7rem;
-        list-style: none;
-      }
-    }
   }
 
   @media screen and (min-width: 700px) {

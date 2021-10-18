@@ -3,6 +3,7 @@ import { Circle } from "./components/Circle";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ViewLayout } from "../../components/ViewLayout";
+import { Nav } from "../../components/Nav";
 
 export const Home: React.FC = () => {
   const circleRef = useRef<HTMLDivElement>(null);
@@ -18,11 +19,7 @@ export const Home: React.FC = () => {
           東京で活動しているエンジニア
         </h3>
         <nav className={classes.nav}>
-          <ul>
-            <li>Projects</li>
-            <li>Contact Me</li>
-            <li>Socials</li>
-          </ul>
+          <Nav />
         </nav>
         <div className={classes.circleContainer} ref={circleRef}>
           <Circle circleRef={circleRef} />
