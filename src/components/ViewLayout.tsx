@@ -3,7 +3,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import classes from "./ViewLayout.module.scss";
 import { multi } from "../utils/multiClass";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export type ShowButton = {
   linkTo: string;
@@ -22,8 +22,29 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
   const history = useHistory();
   const contentHeight = top && bottom ? "90%" : "95%";
 
+  const pageTransitionContainer: Variants = {
+    initial: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
   return (
-    <div className={classes.layoutContainer}>
+    <motion.div
+      className={classes.layoutContainer}
+      variants={pageTransitionContainer}
+      initial="initial"
+      animate="visible"
+      exit="exit"
+    >
       {top && (
         <div className={classes.top}>
           <button
@@ -54,6 +75,6 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           />
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
