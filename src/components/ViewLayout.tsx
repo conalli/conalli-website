@@ -50,7 +50,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
     exit: {
       y: contentTransitionDir,
       transition: {
-        duration: 1,
+        duration: 0.6,
       },
     },
   };
@@ -71,12 +71,14 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
               setTransitionUp(true);
             }}
           >
-            <button
-              className={multi(classes.scrollBtn)}
+            <motion.button
+              className={multi(classes.scrollBtn, classes.scrollUp)}
               onClick={() => clickHandler(`/${top.linkTo}`)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              Scroll Up
-            </button>
+              scroll up
+            </motion.button>
             <KeyboardArrowUpIcon
               className={classes.topArrow}
               fontSize="large"
