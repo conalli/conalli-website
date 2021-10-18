@@ -1,29 +1,114 @@
 import classes from "./home.module.scss";
 import { Circle } from "./components/Circle";
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ViewLayout } from "../../components/ViewLayout";
 import { Nav } from "../../components/Nav";
+import { duration } from "@mui/material";
 
 export const Home: React.FC = () => {
   const circleRef = useRef<HTMLDivElement>(null);
+
+  const transitionTitle: Variants = {
+    initial: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const transitionSubtitle: Variants = {
+    initial: {
+      y: "-100vh",
+    },
+    visible: {
+      y: 0,
+      transition: {
+        delay: 0.6,
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const transitionCircle: Variants = {
+    initial: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <ViewLayout bottom={{ linkTo: "projects" }}>
       <motion.div className={classes.homeContainer}>
-        <h1 className={classes.title}>Hi, I'm Conall;</h1>
-        <h3 className={classes.subTitle}>
+        <motion.h1
+          className={classes.title}
+          variants={transitionTitle}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+        >
+          Hi, I'm Conall;
+        </motion.h1>
+        <motion.h3
+          className={classes.subTitle}
+          variants={transitionTitle}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+        >
           A software engineer based in Tokyo, Japan.
-        </h3>
-        <h1 className={classes.japaneseTitle}>こんにちは、コナルです。</h1>
-        <h3 className={classes.japaneseSubtitle}>
+        </motion.h3>
+        <motion.h1
+          className={classes.japaneseTitle}
+          variants={transitionSubtitle}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+        >
+          こんにちは、コナルです。
+        </motion.h1>
+        <motion.h3
+          className={classes.japaneseSubtitle}
+          variants={transitionSubtitle}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+        >
           東京で活動しているエンジニア
-        </h3>
-        <nav className={classes.nav}>
+        </motion.h3>
+        <motion.nav
+          className={classes.nav}
+          variants={transitionCircle}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+        >
           <Nav />
-        </nav>
-        <div className={classes.circleContainer} ref={circleRef}>
+        </motion.nav>
+        <motion.div
+          className={classes.circleContainer}
+          ref={circleRef}
+          variants={transitionCircle}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+        >
           <Circle circleRef={circleRef} />
-        </div>
+        </motion.div>
       </motion.div>
     </ViewLayout>
   );
