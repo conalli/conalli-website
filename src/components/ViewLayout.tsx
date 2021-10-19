@@ -8,23 +8,23 @@ import { TransitionOne } from "./transitionComponents/TransitionOne";
 import { TransitionTwo } from "./transitionComponents/TransitionTwo";
 import { useState } from "react";
 
-export type ShowButton = {
+export type ViewLayoutScroll = {
   linkTo: string;
-};
-
-export type ViewLayoutProps = {
-  top?: ShowButton;
-  bottom?: ShowButton;
   transitionBackground: {
     one: string;
     two: string;
   };
+  color: string;
+};
+
+export type ViewLayoutProps = {
+  top?: ViewLayoutScroll;
+  bottom?: ViewLayoutScroll;
 };
 
 export const ViewLayout: React.FC<ViewLayoutProps> = ({
   top,
   bottom,
-  transitionBackground,
   children,
 }) => {
   const [transitionUp, setTransitionUp] = useState(false);
@@ -49,7 +49,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
     exit: {
       y: contentTransitionDir,
       transition: {
-        duration: 0.6,
+        duration: 1,
       },
     },
   };
@@ -74,7 +74,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
       y: "-1vh",
       transition: {
         y: {
-          duration: 1.25,
+          duration: 0.8,
           repeat: Infinity,
           type: "spring",
           bounce: 0.7,
@@ -87,7 +87,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
       y: "1vh",
       transition: {
         y: {
-          duration: 1.25,
+          duration: 0.8,
           repeat: Infinity,
           type: "spring",
           bounce: 0.7,
@@ -109,6 +109,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
         {top && (
           <motion.div
             className={classes.top}
+            style={{ backgroundColor: top.color }}
             onHoverStart={() => {
               setTransitionUp(true);
             }}
@@ -142,6 +143,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
         {bottom && (
           <motion.div
             className={classes.bottom}
+            style={{ backgroundColor: bottom.color }}
             onHoverStart={() => {
               setTransitionUp(false);
             }}
@@ -172,11 +174,19 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
       </motion.div>
       <TransitionOne
         up={transitionUp}
-        transitionBackground={transitionBackground.one}
+        transitionBackground={
+          transitionUp
+            ? top?.transitionBackground.one
+            : bottom?.transitionBackground.one
+        }
       />
       <TransitionTwo
         up={transitionUp}
-        transitionBackground={transitionBackground.two}
+        transitionBackground={
+          transitionUp
+            ? top?.transitionBackground.two
+            : bottom?.transitionBackground.two
+        }
       />
     </div>
   );
