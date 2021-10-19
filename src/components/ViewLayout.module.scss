@@ -34,8 +34,29 @@
 
     .scrollUp {
       top: 2.5%;
+      background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 9%,
+          rgba(253, 74, 74, 0.8),
+          rgba(253, 74, 74, 0.8) 10%
+        ),
+        repeating-linear-gradient(
+          135deg,
+          transparent,
+          transparent 9%,
+          rgba(253, 74, 74, 0.8),
+          rgba(253, 74, 74, 0.8) 10%
+        ),
+        repeating-linear-gradient(
+          0deg,
+          white,
+          white 9%,
+          rgba(253, 74, 74, 0.8),
+          rgba(253, 74, 74, 0.8) 10%
+        );
       color: black;
-      font-size: 1.5rem;
+      font-size: 2.5rem;
     }
 
     &:hover {
@@ -60,29 +81,15 @@
 
     .scrollDown {
       bottom: 2.5%;
+      color: rgba(253, 74, 74, 1);
+      font-size: 2.5rem;
       background: repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 9%,
-          rgba(253, 74, 74, 0.8),
-          rgba(253, 74, 74, 0.8) 10%
-        ),
-        repeating-linear-gradient(
-          135deg,
-          transparent,
-          transparent 9%,
-          rgba(253, 74, 74, 0.8),
-          rgba(253, 74, 74, 0.8) 10%
-        ),
-        repeating-linear-gradient(
-          0deg,
-          white,
-          white 9%,
-          rgba(253, 74, 74, 0.8),
-          rgba(253, 74, 74, 0.8) 10%
-        );
-      color: black;
-      font-size: 1.5rem;
+        22.5deg,
+        white,
+        white 4%,
+        black,
+        black 5%
+      );
     }
 
     .bottomArrow {
