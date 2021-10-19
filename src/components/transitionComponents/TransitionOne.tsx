@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const TransitionOne: React.FC<{
   up: boolean;
-  transitionBackground: string;
+  transitionBackground: string | undefined;
 }> = ({ up, transitionBackground }) => {
   const transitionOneUp = {
     exit: {
@@ -27,7 +27,7 @@ export const TransitionOne: React.FC<{
       style={{
         height: "100vh",
         width: "100vw",
-        backgroundColor: transitionBackground,
+        backgroundColor: transitionBackground ?? "rgba(253, 74, 74, 0.8)",
         position: "absolute",
         top: "-100vh",
         left: 0,
@@ -40,7 +40,7 @@ export const TransitionOne: React.FC<{
       style={{
         height: "100vh",
         width: "100vw",
-        backgroundColor: transitionBackground,
+        backgroundColor: transitionBackground ?? "black",
         position: "absolute",
         top: "100vh",
         left: 0,

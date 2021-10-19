@@ -52,10 +52,13 @@ export const Home: React.FC = () => {
 
   return (
     <ViewLayout
-      bottom={{ linkTo: "projects" }}
-      transitionBackground={{
-        one: "rgba(253, 74, 74, 0.8)",
-        two: "black",
+      bottom={{
+        linkTo: "projects",
+        transitionBackground: {
+          one: "rgba(253, 74, 74, 0.8)",
+          two: "black",
+        },
+        color: "rgba(253, 74, 74, 0.8)",
       }}
     >
       <motion.div className={classes.homeContainer}>

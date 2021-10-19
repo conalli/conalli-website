@@ -13,9 +13,16 @@ export const Projects: React.FC = () => {
   };
   return (
     <ViewLayout
-      top={{ linkTo: "" }}
-      bottom={{ linkTo: "contact" }}
-      transitionBackground={{ one: "green", two: "wheat" }}
+      top={{
+        linkTo: "",
+        transitionBackground: { one: "green", two: "wheat" },
+        color: "rgba(253, 74, 74, 0.8)",
+      }}
+      bottom={{
+        linkTo: "contact",
+        transitionBackground: { one: "wheat", two: "green" },
+        color: "black",
+      }}
     >
       <div className={classes.projectsContainer}>
         {projectPage == 0 && (
