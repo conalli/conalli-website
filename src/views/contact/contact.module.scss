@@ -1,0 +1,24 @@
+.contactContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr;
+
+  .aboutMeContainer {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: whitesmoke;
+    padding: 0 5% 5% 8%;
+
+    h1 {
+      font-size: 5rem;
+    }
+  }
+
+  .contactFormContainer {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: grey;
+  }
+}
