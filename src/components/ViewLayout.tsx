@@ -28,14 +28,13 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
   children,
 }) => {
   const [transitionUp, setTransitionUp] = useState(false);
-  const history = useHistory();
+  const contentHeight = top && bottom ? "90%" : "95%";
+  const contentTransitionDir = transitionUp ? "150vh" : "-150vh";
 
+  const history = useHistory();
   const clickHandler = (url: string): void => {
     history.push(url);
   };
-
-  const contentHeight = top && bottom ? "90%" : "95%";
-  const contentTransitionDir = transitionUp ? "150vh" : "-150vh";
 
   const pageTransitionContainer: Variants = {
     initial: {
@@ -56,14 +55,14 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
   };
 
   const buttonTransition: Variants = {
-    initial: {
+    buttonInitial: {
       opacity: 0,
     },
-    visible: {
+    buttonVisible: {
       opacity: 1,
       transition: {
         delay: 1,
-        duration: 1,
+        duration: 0.5,
         ease: "easeInOut",
       },
     },
@@ -113,7 +112,9 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             onHoverStart={() => {
               setTransitionUp(true);
             }}
-            initial="upInitial"
+            variants={buttonTransition}
+            initial={["upInitial", "buttonInitial"]}
+            animate="buttonVisible"
             whileHover="upArrowHover"
             onClick={() => clickHandler(`/${top.linkTo}`)}
           >
@@ -144,7 +145,9 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             onHoverStart={() => {
               setTransitionUp(false);
             }}
-            initial="downInitial"
+            variants={buttonTransition}
+            initial={["downInitial", "buttonInitial"]}
+            animate="buttonVisible"
             whileHover="downArrowHover"
             onClick={() => clickHandler(`/${bottom.linkTo}`)}
           >
