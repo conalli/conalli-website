@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import { ViewLayout } from "../../components/ViewLayout";
 import { Nav } from "../../components/Nav";
-import { duration } from "@mui/material";
 
 export const Home: React.FC = () => {
   const circleRef = useRef<HTMLDivElement>(null);
@@ -54,7 +53,10 @@ export const Home: React.FC = () => {
   return (
     <ViewLayout
       bottom={{ linkTo: "projects" }}
-      transitionBackground={{ one: "yellow", two: "blue" }}
+      transitionBackground={{
+        one: "rgba(253, 74, 74, 0.8)",
+        two: "black",
+      }}
     >
       <motion.div className={classes.homeContainer}>
         <motion.h1

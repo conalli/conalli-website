@@ -44,13 +44,56 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.25,
       },
     },
     exit: {
       y: contentTransitionDir,
       transition: {
         duration: 0.6,
+      },
+    },
+  };
+
+  const buttonTransition: Variants = {
+    initial: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const arrowAnim = {
+    upInitial: { y: "1vh" },
+    upArrowHover: {
+      y: "-1vh",
+      transition: {
+        y: {
+          duration: 1.25,
+          repeat: Infinity,
+          type: "spring",
+          bounce: 0.7,
+          repeatDelay: 0.35,
+        },
+      },
+    },
+    downInitial: { y: "-1vh" },
+    downArrowHover: {
+      y: "1vh",
+      transition: {
+        y: {
+          duration: 1.25,
+          repeat: Infinity,
+          type: "spring",
+          bounce: 0.7,
+          repeatDelay: 0.35,
+        },
       },
     },
   };
@@ -70,18 +113,25 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             onHoverStart={() => {
               setTransitionUp(true);
             }}
+            initial="upInitial"
+            whileHover="upArrowHover"
+            onClick={() => clickHandler(`/${top.linkTo}`)}
           >
             <motion.button
               className={multi(classes.scrollBtn, classes.scrollUp)}
-              onClick={() => clickHandler(`/${top.linkTo}`)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              variants={buttonTransition}
+              initial="initial"
+              animate="visible"
             >
               scroll up
             </motion.button>
             <KeyboardArrowUpIcon
               className={classes.topArrow}
               fontSize="large"
+              component={motion.svg}
+              variants={arrowAnim}
             />
           </motion.div>
         )}
@@ -89,21 +139,30 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           {children}
         </div>
         {bottom && (
-          <motion.div className={classes.bottom}>
+          <motion.div
+            className={classes.bottom}
+            onHoverStart={() => {
+              setTransitionUp(false);
+            }}
+            initial="downInitial"
+            whileHover="downArrowHover"
+            onClick={() => clickHandler(`/${bottom.linkTo}`)}
+          >
             <motion.button
               className={multi(classes.scrollBtn, classes.scrollDown)}
-              onClick={() => clickHandler(`/${bottom.linkTo}`)}
-              onHoverStart={() => {
-                setTransitionUp(false);
-              }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              variants={buttonTransition}
+              initial="initial"
+              animate="visible"
             >
               scroll down
             </motion.button>
             <KeyboardArrowDownIcon
               className={classes.bottomArrow}
               fontSize="large"
+              component={motion.svg}
+              variants={arrowAnim}
             />
           </motion.div>
         )}
