@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
     visible: {
       x: 0,
       transition: {
-        delay: 0.5,
+        delay: 0.3,
         duration: 0.5,
         ease: "easeInOut",
       },
@@ -29,7 +29,7 @@ export const Home: React.FC = () => {
     visible: {
       y: 0,
       transition: {
-        delay: 0.6,
+        delay: 0.4,
         duration: 0.5,
         ease: "easeInOut",
       },
@@ -43,7 +43,7 @@ export const Home: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 1,
+        delay: 0.5,
         duration: 1,
         ease: "easeInOut",
       },

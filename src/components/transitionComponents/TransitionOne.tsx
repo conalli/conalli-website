@@ -8,7 +8,7 @@ export const TransitionOne: React.FC<{
     exit: {
       y: "250vh",
       transition: {
-        duration: 1,
+        duration: 0.6,
       },
     },
   };
@@ -17,7 +17,7 @@ export const TransitionOne: React.FC<{
     exit: {
       y: "-250vh",
       transition: {
-        duration: 1,
+        duration: 0.6,
       },
     },
   };

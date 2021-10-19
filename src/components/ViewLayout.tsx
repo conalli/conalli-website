@@ -49,7 +49,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
     exit: {
       y: contentTransitionDir,
       transition: {
-        duration: 1,
+        duration: 0.5,
       },
     },
   };
@@ -61,7 +61,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
     buttonVisible: {
       opacity: 1,
       transition: {
-        delay: 1,
+        delay: 0.35,
         duration: 0.5,
         ease: "easeInOut",
       },
