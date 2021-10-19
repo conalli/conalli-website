@@ -15,12 +15,18 @@ export const Projects: React.FC = () => {
     <ViewLayout
       top={{
         linkTo: "",
-        transitionBackground: { one: "green", two: "wheat" },
+        transitionBackground: {
+          one: "rgba(253, 74, 74, 0.8)",
+          two: "grey",
+        },
         color: "rgba(253, 74, 74, 0.8)",
       }}
       bottom={{
         linkTo: "contact",
-        transitionBackground: { one: "wheat", two: "green" },
+        transitionBackground: {
+          one: "rgba(253, 74, 74, 0.8)",
+          two: "whitesmoke",
+        },
         color: "black",
       }}
     >
