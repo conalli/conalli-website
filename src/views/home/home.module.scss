@@ -15,7 +15,7 @@
     grid-row: 2;
     background-color: black;
     color: white;
-    font-size: 2rem;
+    font-size: clamp(2.5rem, 6vw + 1rem, 6rem);
     margin: 0;
   }
 
@@ -26,7 +26,7 @@
     grid-row: 3;
     background-color: black;
     color: white;
-    font-size: 1rem;
+    font-size: clamp(1.25rem, 3vw + 0.25rem, 3rem);
     z-index: 1;
     margin: 0;
   }
@@ -49,7 +49,7 @@
     margin: 0;
     justify-self: center;
     align-self: start;
-    font-size: 1rem;
+    font-size: clamp(1.5rem, 6vw + 0.6rem, 4rem);
     font-weight: bold;
     color: white;
     background-color: rgba(253, 74, 74, 0.8);
@@ -62,7 +62,7 @@
     margin: 0;
     justify-self: center;
     align-self: end;
-    font-size: 1rem;
+    font-size: clamp(1.125rem, 5vw + 0.25rem, 2.75rem);
     font-weight: bold;
     color: white;
     background-color: rgba(253, 74, 74, 0.8);
@@ -77,30 +77,14 @@
 
   @media screen and (min-width: 700px) {
     .title {
-      font-size: 3rem;
       grid-column: 2 / 4;
-    }
-    .subTitle {
-      font-size: 1.8rem;
     }
     .textBody {
       font-size: 1.3rem;
     }
-    .japaneseTitle {
-      font-size: 2rem;
-    }
-    .japaneseSubtitle {
-      font-size: 1.7rem;
-    }
   }
 
   @media screen and (min-width: 1000px) {
-    .title {
-      font-size: 5rem;
-    }
-    .subTitle {
-      font-size: 2rem;
-    }
     .textBody {
       font-size: 1.4rem;
       grid-column: 2 / 4;
@@ -109,12 +93,10 @@
       align-self: end;
     }
     .japaneseTitle {
-      font-size: 3rem;
       justify-self: end;
       align-self: start;
     }
     .japaneseSubtitle {
-      font-size: 2rem;
       grid-column: 5;
       grid-row: 2 / 5;
       justify-self: start;
@@ -123,20 +105,10 @@
   }
 
   @media screen and (min-width: 1500px) {
-    .title {
-      font-size: 6rem;
-    }
-    .subTitle {
-      font-size: 3rem;
-    }
     .textBody {
       font-size: 1.5rem;
     }
-    .japaneseTitle {
-      font-size: 4rem;
-    }
     .japaneseSubtitle {
-      font-size: 2.25rem;
       justify-self: center;
     }
   }
