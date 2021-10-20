@@ -7,14 +7,13 @@
   align-items: center;
 
   .scrollBtn {
-    height: min(15vh, 15vw);
-    width: min(15vh, 15vw);
-    right: 10%;
+    height: min(11vh, 11vw);
+    width: min(11vh, 11vw);
+    right: 5%;
     border-radius: 50%;
     border-style: none;
     position: fixed;
     font-weight: bold;
-    text-decoration: underline 0.2rem black;
     &:hover {
       cursor: pointer;
     }
@@ -38,15 +37,15 @@
           45deg,
           transparent,
           transparent 9%,
-          rgba(253, 74, 74, 0.8),
-          rgba(253, 74, 74, 0.8) 10%
+          rgba(253, 74, 74, 0.5),
+          rgba(253, 74, 74, 0.5) 10%
         ),
         repeating-linear-gradient(
           135deg,
           transparent,
           transparent 9%,
-          rgba(253, 74, 74, 0.8),
-          rgba(253, 74, 74, 0.8) 10%
+          rgba(253, 74, 74, 0.5),
+          rgba(253, 74, 74, 0.5) 10%
         ),
         repeating-linear-gradient(
           0deg,
@@ -56,7 +55,8 @@
           rgba(253, 74, 74, 0.8) 10%
         );
       color: black;
-      font-size: 2.5rem;
+      font-size: clamp(0.125rem, 0.125rem + 2vw, 1.8rem);
+      text-decoration: underline clamp(0.1rem, 0.1rem + 0.25vw, 0.2rem) black;
     }
 
     &:hover {
@@ -82,14 +82,17 @@
     .scrollDown {
       bottom: 2.5%;
       color: rgba(253, 74, 74, 1);
-      font-size: 2.5rem;
-      background: repeating-linear-gradient(
-        22.5deg,
-        white,
-        white 4%,
-        black,
-        black 5%
-      );
+      font-size: clamp(0.125rem, 0.125rem + 2vw, 1.8rem);
+      text-decoration: underline clamp(0.1rem, 0.1rem + 0.25vw, 0.2rem)
+        rgba(253, 74, 74, 1);
+      background: white
+        repeating-linear-gradient(
+          22.5deg,
+          white,
+          white 4%,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3) 5%
+        );
     }
 
     .bottomArrow {
