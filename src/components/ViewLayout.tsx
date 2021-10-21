@@ -121,6 +121,9 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           >
             <motion.button
               className={multi(classes.scrollBtn, classes.scrollUp)}
+              onHoverStart={() => {
+                setTransitionUp(true);
+              }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               variants={buttonTransition}
@@ -170,6 +173,9 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           >
             <motion.button
               className={multi(classes.scrollBtn, classes.scrollDown)}
+              onHoverStart={() => {
+                setTransitionUp(false);
+              }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               variants={buttonTransition}
