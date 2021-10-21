@@ -137,9 +137,24 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             />
           </motion.div>
         )}
-        <div className={classes.content} style={{ height: contentHeight }}>
+        <motion.div
+          className={classes.content}
+          style={{ height: contentHeight }}
+          drag="y"
+          dragConstraints={{ top: 5, bottom: 5 }}
+          onDrag={(_e, info) => {
+            console.log(info.delta.y);
+            if (bottom && info.delta.y < -35) {
+              setTransitionUp(false);
+              clickHandler(`/${bottom.linkTo}`);
+            } else if (top && info.delta.y > 35) {
+              setTransitionUp(true);
+              clickHandler(`/${top.linkTo}`);
+            }
+          }}
+        >
           {children}
-        </div>
+        </motion.div>
         {bottom && (
           <motion.div
             className={classes.bottom}
