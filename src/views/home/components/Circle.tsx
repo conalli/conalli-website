@@ -44,10 +44,11 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
   ];
 
   useEffect(() => {
-    setCircleDimensions((prev) => {
-      return circleRef.current
-        ? Math.max(viewportWidth.current / 2.2, viewportHeight.current / 1.4)
-        : prev;
+    setCircleDimensions(() => {
+      const isLandscape = viewportWidth.current > viewportHeight.current;
+      return circleRef.current && isLandscape
+        ? viewportHeight.current / 1.4
+        : viewportWidth.current / 1.4;
     });
   }, []);
 
