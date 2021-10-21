@@ -1,4 +1,5 @@
 import React, { RefObject, useEffect, useState } from "react";
+import { useViewportDimensions } from "../../../utils/useViewportDimensions";
 import classes from "./circle.module.scss";
 import { Food } from "./SVGTextComponents/FoodSpan";
 import { Github } from "./SVGTextComponents/GithubSpan";
@@ -9,11 +10,10 @@ import { Sleep } from "./SVGTextComponents/SleepSpan";
 export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
   circleRef,
 }) => {
+  const { viewportWidth, viewportHeight } = useViewportDimensions();
   const [circleDimensions, setCircleDimensions] = useState(
-    window.innerHeight / 1.4
+    viewportHeight.current / 1.4
   );
-
-  console.log(circleDimensions);
 
   const textOrder = [
     <Linkedin />,
@@ -45,12 +45,8 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
 
   useEffect(() => {
     setCircleDimensions((prev) => {
-      console.log("called");
       return circleRef.current
-        ? Math.min(
-            circleRef.current.offsetWidth,
-            circleRef.current.offsetHeight
-          )
+        ? Math.max(viewportWidth.current / 2.2, viewportHeight.current / 1.4)
         : prev;
     });
   }, []);
@@ -62,7 +58,7 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
       width={circleDimensions}
       height={circleDimensions}
     >
-      {textOrder.map((val, idx) => {
+      {textOrder.map((tSpan, idx) => {
         return (
           <text
             x="50%"
@@ -71,7 +67,7 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
             textAnchor="middle"
             key={idx}
           >
-            {val}
+            {tSpan}
           </text>
         );
       })}

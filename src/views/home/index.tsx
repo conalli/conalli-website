@@ -1,12 +1,21 @@
 import classes from "./home.module.scss";
 import { Circle } from "./components/Circle";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ViewLayout } from "../../components/ViewLayout";
 import { Nav } from "../../components/Nav";
+import { useViewportDimensions } from "../../utils/useViewportDimensions";
 
 export const Home: React.FC = () => {
   const circleRef = useRef<HTMLDivElement>(null);
+  const { viewportWidth, viewportHeight } = useViewportDimensions();
+  const [showSub, setShowSub] = useState(viewportWidth.current > 375);
+
+  useEffect(() => {
+    setShowSub(() => {
+      return viewportWidth.current > 375 && viewportHeight.current > 675;
+    });
+  }, []);
 
   const transitionTitle: Variants = {
     initial: {
@@ -58,7 +67,7 @@ export const Home: React.FC = () => {
           one: "rgba(253, 74, 74, 0.8)",
           two: "black",
         },
-        color: "rgba(253, 74, 74, 0.8)",
+        color: "black",
       }}
     >
       <motion.div className={classes.homeContainer}>
@@ -80,24 +89,28 @@ export const Home: React.FC = () => {
         >
           A software engineer based in Tokyo, Japan.
         </motion.h3>
-        <motion.h1
-          className={classes.japaneseTitle}
-          variants={transitionSubtitle}
-          initial="initial"
-          animate="visible"
-          exit="exit"
-        >
-          こんにちは、コナルです。
-        </motion.h1>
-        <motion.h3
-          className={classes.japaneseSubtitle}
-          variants={transitionSubtitle}
-          initial="initial"
-          animate="visible"
-          exit="exit"
-        >
-          東京で活動しているエンジニア
-        </motion.h3>
+        <div className={classes.japaneseTitlesContainer}>
+          <motion.h1
+            className={classes.japaneseTitle}
+            variants={transitionSubtitle}
+            initial="initial"
+            animate="visible"
+            exit="exit"
+          >
+            こんにちは、コナルです。
+          </motion.h1>
+          {showSub && (
+            <motion.h3
+              className={classes.japaneseSubtitle}
+              variants={transitionSubtitle}
+              initial="initial"
+              animate="visible"
+              exit="exit"
+            >
+              東京で活動しているエンジニア
+            </motion.h3>
+          )}
+        </div>
         <motion.nav
           className={classes.nav}
           variants={transitionCircle}
