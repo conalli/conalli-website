@@ -42,14 +42,24 @@
     margin: 0;
   }
 
+  .japaneseTitlesContainer {
+    grid-column: 5;
+    grid-row: 2 / 7;
+    justify-self: end;
+    align-self: start;
+    justify-content: flex-end;
+    align-content: flex-end;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+    margin: 0;
+    background-color: transparent;
+  }
+
   .japaneseTitle {
     writing-mode: vertical-rl;
-    grid-column: 5;
-    grid-row: 2 / 6;
     margin: 0;
-    justify-self: center;
-    align-self: start;
-    font-size: clamp(1.5rem, 6vw + 0.6rem, 4rem);
+    font-size: clamp(1.25rem, 5vw + 0.6rem, 4rem);
     font-weight: bold;
     color: white;
     background-color: rgba(253, 74, 74, 0.8);
@@ -57,12 +67,10 @@
 
   .japaneseSubtitle {
     writing-mode: vertical-rl;
-    grid-column: 5;
-    grid-row: 3 / 5;
+    justify-self: start;
+    align-self: start;
     margin: 0;
-    justify-self: center;
-    align-self: end;
-    font-size: clamp(1.125rem, 5vw + 0.25rem, 2.75rem);
+    font-size: clamp(1rem, 2.5vw + 0.25rem, 2.75rem);
     font-weight: bold;
     color: white;
     background-color: rgba(253, 74, 74, 0.8);
@@ -75,9 +83,15 @@
     align-self: center;
   }
 
+  @media screen and (min-width: 400px) {
+    .japaneseTitle {
+      justify-content: start;
+    }
+  }
+
   @media screen and (min-width: 700px) {
     .title {
-      grid-column: 2 / 4;
+      grid-column: 2 / 6;
     }
     .textBody {
       font-size: 1.3rem;
@@ -85,13 +99,6 @@
   }
 
   @media screen and (min-width: 1000px) {
-    .textBody {
-      font-size: 1.4rem;
-      grid-column: 2 / 4;
-      grid-row: 2 / 4;
-      justify-self: start;
-      align-self: end;
-    }
     .japaneseTitle {
       justify-self: end;
       align-self: start;
@@ -99,17 +106,6 @@
     .japaneseSubtitle {
       grid-column: 5;
       grid-row: 2 / 5;
-      justify-self: start;
-      align-self: start;
-    }
-  }
-
-  @media screen and (min-width: 1500px) {
-    .textBody {
-      font-size: 1.5rem;
-    }
-    .japaneseSubtitle {
-      justify-self: center;
     }
   }
 
