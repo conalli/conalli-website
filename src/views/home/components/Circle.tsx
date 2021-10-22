@@ -7,12 +7,10 @@ import { Linkedin } from "./SVGTextComponents/LinkedinSpan";
 import { Location } from "./SVGTextComponents/LocationSpan";
 import { Sleep } from "./SVGTextComponents/SleepSpan";
 
-export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
-  circleRef,
-}) => {
+export const Circle: React.FC = () => {
   const { viewportWidth, viewportHeight } = useViewportDimensions();
   const [circleDimensions, setCircleDimensions] = useState(
-    viewportHeight.current / 1.4
+    viewportHeight / 1.4
   );
 
   const textOrder = [
@@ -45,12 +43,10 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
 
   useEffect(() => {
     setCircleDimensions(() => {
-      const isLandscape = viewportWidth.current > viewportHeight.current;
-      return circleRef.current && isLandscape
-        ? viewportHeight.current / 1.4
-        : viewportWidth.current / 1.4;
+      const isLandscape = viewportWidth > viewportHeight;
+      return isLandscape ? viewportHeight / 1.4 : viewportWidth / 1.4;
     });
-  }, []);
+  }, [window.innerWidth, window.innerHeight]);
 
   return (
     <svg
@@ -67,6 +63,12 @@ export const Circle: React.FC<{ circleRef: RefObject<HTMLDivElement> }> = ({
             fill="red"
             textAnchor="middle"
             key={idx}
+            style={{
+              fontSize:
+                viewportWidth > viewportHeight
+                  ? (circleDimensions / 100) * 0.8
+                  : circleDimensions / 100,
+            }}
           >
             {tSpan}
           </text>

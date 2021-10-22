@@ -1,17 +1,9 @@
 .circle {
   width: 100%;
-  clip-path: circle(25%);
+  clip-path: circle(40%);
 
   &:hover .circleText {
     fill: rgba(192, 61, 61, 0.5);
-  }
-
-  @media screen and (min-width: 750px) {
-    clip-path: circle(38%);
-  }
-
-  @media screen and (min-width: 800px) {
-    clip-path: circle(40%);
   }
 
   @media screen and (min-width: 1000px) {
@@ -37,7 +29,6 @@
     flex-direction: column;
     justify-content: center;
     fill: rgba(253, 74, 74, 0.8);
-    font-size: 35%;
     font-weight: bold;
     overflow: hidden;
 
