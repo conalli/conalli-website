@@ -1,20 +1,20 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export const useViewportDimensions = () => {
-  const viewportWidth = useRef(0);
-  const viewportHeight = useRef(0);
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     const updateViewportDimensions = () => {
-      viewportWidth.current = window.innerWidth;
-      viewportHeight.current = window.innerHeight;
-      console.log(viewportWidth.current, viewportHeight.current);
+      setViewportWidth(window.innerWidth);
+      setViewportHeight(window.innerHeight);
+      console.log(viewportWidth, viewportHeight);
     };
 
     updateViewportDimensions();
 
     window.addEventListener("resize", updateViewportDimensions);
-  }, []);
+  }, [window.innerHeight, window.innerWidth]);
 
   return { viewportWidth, viewportHeight };
 };
