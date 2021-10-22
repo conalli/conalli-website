@@ -8,7 +8,6 @@ export const useViewportDimensions = () => {
     const updateViewportDimensions = () => {
       setViewportWidth(window.innerWidth);
       setViewportHeight(window.innerHeight);
-      console.log(viewportWidth, viewportHeight);
     };
 
     updateViewportDimensions();
