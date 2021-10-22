@@ -5,6 +5,7 @@ import { multi } from "../../utils/multiClass";
 import { Project1 } from "./components/project1";
 import { Project2 } from "./components/project2";
 import { Project3 } from "./components/project3";
+import * as TechStack from "../../assets/techStack";
 import classes from "./projects.module.scss";
 
 export const Projects: React.FC = () => {
@@ -35,6 +36,14 @@ export const Projects: React.FC = () => {
         {projectPage == 0 && (
           <div className={multi(classes.mainContent, classes.projects)}>
             <h1>Projects</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+              voluptates. Quasi accusamus sed a, at nulla dolorem distinctio.
+              Quasi assumenda laboriosam incidunt! Incidunt harum reprehenderit
+              explicabo iusto. Suscipit minus dolore doloremque rerum ab
+              repudiandae, corrupti hic molestias veniam et in aspernatur cum
+              tenetur quam quis aliquam autem voluptates? Vitae, explicabo.
+            </p>
           </div>
         )}
         {projectPage == 1 && (
@@ -53,12 +62,54 @@ export const Projects: React.FC = () => {
           </div>
         )}
         <div className={classes.projectViz}>Project Viz</div>
-        <div className={classes.techStack}>Tech Stack</div>
+        <div className={classes.techStack}>
+          <ul>
+            <li>
+              <TechStack.CSSSVG />
+            </li>
+            <li>
+              <TechStack.ExpressSVG />
+            </li>
+            <li>
+              <TechStack.FlaskSVG />
+            </li>
+            <li>
+              <TechStack.GoSVG />
+            </li>
+            <li>
+              <TechStack.GQLSVG />
+            </li>
+            <li>
+              <TechStack.JSSVG />
+            </li>
+            <li>
+              <TechStack.MatieralSVG />
+            </li>
+            <li>
+              <TechStack.MongoSVG />
+            </li>
+            <li>
+              <TechStack.PSQLSVG />
+            </li>
+            <li>
+              <TechStack.PythonSVG />
+            </li>
+            <li>
+              <TechStack.ReactSVG />
+            </li>
+            <li>
+              <TechStack.RustSVG />
+            </li>
+            <li>
+              <TechStack.TSSVG />
+            </li>
+          </ul>
+        </div>
         <div className={classes.projectNav}>
           <button onClick={() => clickHandler(0)}>Projects</button>
-          <button onClick={() => clickHandler(1)}>Project1</button>
-          <button onClick={() => clickHandler(2)}>Project2</button>
-          <button onClick={() => clickHandler(3)}>Project3</button>
+          <button onClick={() => clickHandler(1)}>My Niwa</button>
+          <button onClick={() => clickHandler(2)}>Bookshelf</button>
+          <button onClick={() => clickHandler(3)}>Away Days</button>
         </div>
         <div className={classes.pageNav}>
           <Nav />
