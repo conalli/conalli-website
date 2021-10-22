@@ -7,13 +7,12 @@ import { Nav } from "../../components/Nav";
 import { useViewportDimensions } from "../../utils/useViewportDimensions";
 
 export const Home: React.FC = () => {
-  const circleRef = useRef<HTMLDivElement>(null);
   const { viewportWidth, viewportHeight } = useViewportDimensions();
-  const [showSub, setShowSub] = useState(viewportWidth.current > 375);
+  const [showSub, setShowSub] = useState(viewportWidth > 375);
 
   useEffect(() => {
     setShowSub(() => {
-      return viewportWidth.current > 375 && viewportHeight.current > 675;
+      return viewportWidth > 375 && viewportHeight > 675;
     });
   }, []);
 
@@ -122,13 +121,12 @@ export const Home: React.FC = () => {
         </motion.nav>
         <motion.div
           className={classes.circleContainer}
-          ref={circleRef}
           variants={transitionCircle}
           initial="initial"
           animate="visible"
           exit="exit"
         >
-          <Circle circleRef={circleRef} />
+          <Circle />
         </motion.div>
       </motion.div>
     </ViewLayout>
