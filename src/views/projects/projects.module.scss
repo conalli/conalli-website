@@ -1,4 +1,4 @@
-.projectsContainer {
+.allProjectsContainer {
   height: 100%;
   width: 100%;
   display: grid;
@@ -7,13 +7,11 @@
   overflow-x: hidden;
 
   .mainContent {
-    background-color: mediumseagreen;
     grid-column: 2;
     grid-row: 1;
   }
 
   .techStack {
-    background-color: yellowgreen;
     grid-column: 2;
     grid-row: 3;
     width: 100%;
@@ -62,10 +60,10 @@
     background-color: lightcoral;
     grid-column: 2;
     grid-row: 2;
+    padding-left: 5%;
   }
 
   .projectNav {
-    background-color: lightgoldenrodyellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,14 +73,15 @@
   }
 
   .pageNav {
-    background-color: orange;
     grid-column: 2;
     grid-row: 5;
+    align-self: end;
+    padding: 0 5%;
   }
 
   @media screen and (min-width: 700px) {
     grid-template-columns: 5% 3fr 0.5fr 5fr 5%;
-    grid-template-rows: 2fr 1fr 1fr 0.5fr;
+    grid-template-rows: 2fr 1fr 1fr 0.5fr 0.5fr;
 
     .mainContent {
       grid-column: 2;
