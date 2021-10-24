@@ -7,39 +7,14 @@ import { MyNiwaDetails, MyNiwaViz } from "./components/MyNiwa";
 import { BookshelfDetails, BookshelfViz } from "./components/Bookshelf";
 import { AwayDaysDetails, AwayDaysViz } from "./components/AwayDays";
 import * as TechStack from "../../assets/techStack";
+import {
+  TechStackList,
+  mainTechStack,
+  myNiwaTechStack,
+  bookshelfTechStack,
+  awayDaysTechStack,
+} from "./utils/projectTechStacks";
 import classes from "./projects.module.scss";
-
-type TechStackList = {
-  css: boolean;
-  express: boolean;
-  flask: boolean;
-  go: boolean;
-  gql: boolean;
-  js: boolean;
-  material: boolean;
-  mongo: boolean;
-  psql: boolean;
-  python: boolean;
-  react: boolean;
-  rust: boolean;
-  ts: boolean;
-};
-
-const mainTechStack = {
-  css: true,
-  express: true,
-  flask: false,
-  go: false,
-  gql: false,
-  js: true,
-  material: false,
-  mongo: true,
-  psql: true,
-  python: false,
-  react: true,
-  rust: false,
-  ts: true,
-};
 
 export const Projects: React.FC = () => {
   const [projectPage, setProjectPage] = useState<number>(0);
@@ -160,16 +135,7 @@ export const Projects: React.FC = () => {
           </button>
           <button
             onClick={() => {
-              setShowTech({
-                ...mainTechStack,
-                css: true,
-                express: true,
-                go: true,
-                material: true,
-                react: true,
-                mongo: true,
-                ts: true,
-              });
+              setShowTech(myNiwaTechStack);
               clickHandler(1);
             }}
           >
@@ -177,13 +143,7 @@ export const Projects: React.FC = () => {
           </button>
           <button
             onClick={() => {
-              setShowTech({
-                ...mainTechStack,
-                python: true,
-                flask: true,
-                mongo: true,
-                rust: true,
-              });
+              setShowTech(bookshelfTechStack);
               clickHandler(2);
             }}
           >
@@ -191,13 +151,7 @@ export const Projects: React.FC = () => {
           </button>
           <button
             onClick={() => {
-              setShowTech({
-                ...mainTechStack,
-                js: true,
-                ts: true,
-                gql: true,
-                psql: true,
-              });
+              setShowTech(awayDaysTechStack);
               clickHandler(3);
             }}
           >
