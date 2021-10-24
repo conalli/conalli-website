@@ -1,10 +1,10 @@
-import classes from "./projectDetails.module.scss";
+import classes from "./projectStyles.module.scss";
 
 export const ProjectsIntro: React.FC = () => {
   return (
-    <div className={classes.projectContainer}>
-      <h1 className={classes.projectTitle}>Projects</h1>
-      <p className={classes.projectText}>
+    <div className={classes.detailsContainer}>
+      <h1 className={classes.detailsTitle}>Projects</h1>
+      <p className={classes.detailsText}>
         Feel free to take a look through a selection of my projects. While each
         project has been built utilising a number of different technologies, my
         main tech stack consists of:

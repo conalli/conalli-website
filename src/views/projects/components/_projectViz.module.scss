@@ -1,0 +1,48 @@
+.vizContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+  .vizSubtitle {
+    font-size: clamp(1.25rem, 3vw + 0.25rem, 2.5rem);
+    margin: 2% 0;
+  }
+  .vizText {
+    font-size: clamp(1rem, 1vw + 0.125rem, 1.5rem);
+  }
+
+  a {
+    font-size: clamp(1rem, 1vw + 0.125rem, 1.5rem);
+    color: rgba(253, 74, 74, 0.8);
+  }
+
+  ul {
+    li {
+      font-size: clamp(1rem, 1vw + 0.125rem, 1.5rem);
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    iframe {
+      width: 358px;
+      height: 202px;
+    }
+  }
+  @media screen and (min-width: 850px) {
+    iframe {
+      width: 448px;
+      height: 252px;
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    iframe {
+      width: 560px;
+      height: 315px;
+    }
+  }
+  @media screen and (min-width: 1300px) {
+    iframe {
+      width: 672px;
+      height: 378px;
+    }
+  }
+}

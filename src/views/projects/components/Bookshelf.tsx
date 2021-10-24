@@ -1,10 +1,10 @@
-import classes from "./projectDetails.module.scss";
+import classes from "./projectStyles.module.scss";
 
 export const BookshelfDetails: React.FC = () => {
   return (
-    <div className={classes.projectContainer}>
-      <h1 className={classes.projectTitle}>Bookshelf</h1>
-      <p className={classes.projectText}>
+    <div className={classes.detailsContainer}>
+      <h1 className={classes.detailsTitle}>Bookshelf</h1>
+      <p className={classes.detailsText}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere quae
         accusantium alias officia sint doloremque magni numquam voluptatem
         eveniet officiis quaerat, accusamus culpa aliquam eaque.

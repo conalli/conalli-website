@@ -1,0 +1,17 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+  .detailsTitle {
+    font-size: clamp(2rem, 3vw + 0.25rem, 3rem);
+  }
+  .detailsText {
+    font-size: clamp(1rem, 1vw + 0.125rem, 1.5rem);
+  }
+
+  ul {
+    li {
+      font-size: clamp(1rem, 1vw + 0.125rem, 1.5rem);
+    }
+  }
+}
