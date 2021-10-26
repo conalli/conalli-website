@@ -110,9 +110,6 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           <motion.div
             className={classes.top}
             style={{ backgroundColor: top.color }}
-            onHoverStart={() => {
-              setTransitionUp(true);
-            }}
             variants={buttonTransition}
             initial={["upInitial", "buttonInitial"]}
             animate="buttonVisible"
@@ -165,9 +162,6 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           <motion.div
             className={classes.bottom}
             style={{ backgroundColor: bottom.color }}
-            onHoverStart={() => {
-              setTransitionUp(false);
-            }}
             variants={buttonTransition}
             initial={["downInitial", "buttonInitial"]}
             animate="buttonVisible"
