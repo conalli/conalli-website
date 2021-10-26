@@ -1,9 +1,75 @@
-import { TextField } from "@mui/material";
+import emailjs from "emailjs-com";
+import {
+  FormEvent,
+  FormEventHandler,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Nav } from "../../components/Nav";
 import { ViewLayout } from "../../components/ViewLayout";
 import classes from "./contact.module.scss";
+import { init } from "emailjs-com";
+import { motion, Variants } from "framer-motion";
 
 export const Contact: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null!);
+  const [messageText, setMessageText] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  useEffect(() => {
+    init(import.meta.env.VITE_USER_ID);
+  }, []);
+
+  const sendEmail: FormEventHandler = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_USER_ID
+      );
+    } catch (error) {
+      console.error(error);
+    }
+    setMessageText({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const initialLeft: Variants = {
+    initial: {
+      x: "-100vw",
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+  const initialRight: Variants = {
+    initial: {
+      x: "100vh",
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
     <ViewLayout
       top={{
@@ -15,8 +81,13 @@ export const Contact: React.FC = () => {
         color: "black",
       }}
     >
-      <div className={classes.contactContainer}>
-        <div className={classes.aboutMeContainer}>
+      <motion.div className={classes.contactContainer}>
+        <motion.div
+          className={classes.aboutMeContainer}
+          variants={initialLeft}
+          initial="initial"
+          animate="animate"
+        >
           <h1>
             About me<span>.</span>
           </h1>
@@ -28,16 +99,29 @@ export const Contact: React.FC = () => {
             </p>
           </section>
           <Nav />
-        </div>
-        <div className={classes.contactFormContainer}>
+        </motion.div>
+        <motion.div
+          className={classes.contactFormContainer}
+          variants={initialRight}
+          initial="initial"
+          animate="animate"
+        >
           <h1>
             Contact me<span>.</span>
           </h1>
           <section>
-            <p>Feel free to message me and I will get back to you ASAP.</p>
+            <p>
+              Feel free to send me a message and I will get back to you by email
+              ASAP.
+            </p>
           </section>
           <section>
-            <form className={classes.form} autoComplete="off">
+            <form
+              ref={form}
+              className={classes.form}
+              autoComplete="off"
+              onSubmit={sendEmail}
+            >
               <label>
                 Your name.
                 <input
@@ -46,6 +130,16 @@ export const Contact: React.FC = () => {
                   type="text"
                   required
                   placeholder="name"
+                  value={messageText.name}
+                  onChange={(e) =>
+                    setMessageText((prev) => {
+                      console.log(form.current);
+                      return {
+                        ...prev,
+                        name: e.target.value,
+                      };
+                    })
+                  }
                 />
               </label>
               <label>
@@ -56,6 +150,16 @@ export const Contact: React.FC = () => {
                   type="email"
                   required
                   placeholder="email"
+                  value={messageText.email}
+                  onChange={(e) =>
+                    setMessageText((prev) => {
+                      console.log(form.current);
+                      return {
+                        ...prev,
+                        email: e.target.value,
+                      };
+                    })
+                  }
                 />
               </label>
               <label>
@@ -64,13 +168,30 @@ export const Contact: React.FC = () => {
                   className={classes.formField}
                   rows={6}
                   required
+                  name="message"
                   placeholder="message"
+                  value={messageText.message}
+                  onChange={(e) =>
+                    setMessageText((prev) => {
+                      console.log(form.current);
+                      return {
+                        ...prev,
+                        message: e.target.value,
+                      };
+                    })
+                  }
                 />
               </label>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Send
+              </motion.button>
             </form>
           </section>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </ViewLayout>
   );
 };
