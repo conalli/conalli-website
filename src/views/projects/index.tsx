@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Nav } from "../../components/Nav";
 import { ViewLayout } from "../../components/ViewLayout";
 import { multi } from "../../utils/multiClass";
-import { ProjectsIntro } from "./components/ProjectsIntro";
+import { ProjectsIntro, ProjectsIntroViz } from "./components/ProjectsIntro";
 import { MyNiwaDetails, MyNiwaViz } from "./components/MyNiwa";
 import { BookshelfDetails, BookshelfViz } from "./components/Bookshelf";
 import { AwayDaysDetails, AwayDaysViz } from "./components/AwayDays";
@@ -65,6 +65,14 @@ export const Projects: React.FC = () => {
           </div>
         )}
         <div className={classes.projectViz}>
+          {projectPage == 0 && (
+            <div className={classes.projectsIntroViz}>
+              <ProjectsIntroViz
+                clickHandler={clickHandler}
+                setShowTech={setShowTech}
+              />
+            </div>
+          )}
           {projectPage == 1 && (
             <div className={multi(classes.project1)}>
               <MyNiwaViz />
