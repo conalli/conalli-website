@@ -28,8 +28,6 @@ export const MyNiwaViz: React.FC = () => {
     <div className={classes.vizContainer}>
       <h3 className={classes.vizSubtitle}>Project Demonstration</h3>
       <iframe
-        // width="560"
-        // height="315"
         src="https://www.youtube.com/embed/_ou8IDz20h0?start=3240"
         title="YouTube video player"
         frameBorder="0"
