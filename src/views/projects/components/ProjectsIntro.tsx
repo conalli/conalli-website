@@ -8,10 +8,15 @@ import {
   myNiwaTechStack,
   TechStackList,
 } from "../utils/projectTechStacks";
+import { motion } from "framer-motion";
 
 export const ProjectsIntro: React.FC = () => {
   return (
-    <div className={classes.detailsContainer}>
+    <motion.div
+      className={classes.detailsContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h1 className={classes.detailsTitle}>Projects</h1>
       <p className={classes.detailsText}>
         Feel free to take a look through a selection of my projects. While each
@@ -28,7 +33,7 @@ export const ProjectsIntro: React.FC = () => {
         <li>Postgres</li>
         <li>MongoDB</li>
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
@@ -42,40 +47,50 @@ export const ProjectsIntroViz: React.FC<ProjectsIntroVizProps> = ({
   setShowTech,
 }) => {
   return (
-    <div className={multi(classes.vizContainer, classes.projectsIntroViz)}>
+    <motion.div
+      className={multi(classes.vizContainer, classes.projectsIntroViz)}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h3 className={classes.vizSubtitle}>Projects:</h3>
       <ul className={classes.projectsIntroList}>
         <li>
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => {
               setShowTech(myNiwaTechStack);
               clickHandler(1);
             }}
           >
             <img src={myNiwaLogo} />
-          </button>
+          </motion.button>
         </li>
         <li>
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => {
               setShowTech(bookshelfTechStack);
               clickHandler(2);
             }}
           >
             <img src={bookshelfLogo} />
-          </button>
+          </motion.button>
         </li>
         <li>
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => {
               setShowTech(awayDaysTechStack);
               clickHandler(3);
             }}
           >
             <h1>Away Days API</h1>
-          </button>
+          </motion.button>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 };

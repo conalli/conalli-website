@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 import classes from "./projectStyles.module.scss";
 
 export const AwayDaysDetails: React.FC = () => {
   return (
-    <div className={classes.detailsContainer}>
+    <motion.div
+      className={classes.detailsContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h1 className={classes.detailsTitle}>Away Days API</h1>
       <p className={classes.detailsText}>
         Away Days is an API built to help sports fans when following their team
@@ -18,19 +23,23 @@ export const AwayDaysDetails: React.FC = () => {
         great choice as it allows users to retrieve the data that they want
         without any overfetching.
       </p>
-    </div>
+    </motion.div>
   );
 };
 
 export const AwayDaysViz: React.FC = () => {
   return (
-    <div className={classes.vizContainer}>
+    <motion.div
+      className={classes.vizContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h3 className={classes.vizSubtitle}>Repository</h3>
       <ul>
         <li>
           <a href="https://github.com/conalli/awaydays-api">Away Days API</a>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 };

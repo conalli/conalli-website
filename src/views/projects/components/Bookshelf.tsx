@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 import classes from "./projectStyles.module.scss";
 
 export const BookshelfDetails: React.FC = () => {
   return (
-    <div className={classes.detailsContainer}>
+    <motion.div
+      className={classes.detailsContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h1 className={classes.detailsTitle}>Bookshelf</h1>
       <p className={classes.detailsText}>
         Bookshelf is a smart bookmarking application designed to improve
@@ -14,13 +19,17 @@ export const BookshelfDetails: React.FC = () => {
         in-built custom search engine to redirect to the Bookshelf server
         whenever the bookmark shortcut is used.
       </p>
-    </div>
+    </motion.div>
   );
 };
 
 export const BookshelfViz: React.FC = () => {
   return (
-    <div className={classes.vizContainer}>
+    <motion.div
+      className={classes.vizContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h3 className={classes.vizSubtitle}>Project Demonstration</h3>
       <iframe
         src="https://www.youtube.com/embed/_ou8IDz20h0?start=1826"
@@ -40,6 +49,6 @@ export const BookshelfViz: React.FC = () => {
           <a href="https://github.com/conalli/bookshelf-server">Server</a>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 };

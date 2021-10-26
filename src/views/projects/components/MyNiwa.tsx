@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 import classes from "./projectStyles.module.scss";
 
 export const MyNiwaDetails: React.FC = () => {
   return (
-    <div className={classes.detailsContainer}>
+    <motion.div
+      className={classes.detailsContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h1 className={classes.detailsTitle}>My Niwa</h1>
       <p className={classes.detailsText}>
         My Niwa is an application designed to help people to start and maintain
@@ -19,13 +24,17 @@ export const MyNiwaDetails: React.FC = () => {
         React, Material UI and CSS modules, using Framer Motion for interactions
         and animations and Recoil for state management.
       </p>
-    </div>
+    </motion.div>
   );
 };
 
 export const MyNiwaViz: React.FC = () => {
   return (
-    <div className={classes.vizContainer}>
+    <motion.div
+      className={classes.vizContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <h3 className={classes.vizSubtitle}>Project Demonstration</h3>
       <iframe
         src="https://www.youtube.com/embed/_ou8IDz20h0?start=3240"
@@ -49,6 +58,6 @@ export const MyNiwaViz: React.FC = () => {
           </a>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 };
