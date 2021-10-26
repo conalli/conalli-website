@@ -43,6 +43,7 @@ export const ProjectsIntroViz: React.FC<ProjectsIntroVizProps> = ({
 }) => {
   return (
     <div className={multi(classes.vizContainer, classes.projectsIntroViz)}>
+      <h3 className={classes.vizSubtitle}>Projects:</h3>
       <ul className={classes.projectsIntroList}>
         <li>
           <button

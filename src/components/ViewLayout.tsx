@@ -117,7 +117,10 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             initial={["upInitial", "buttonInitial"]}
             animate="buttonVisible"
             whileHover="upArrowHover"
-            onClick={() => clickHandler(`/${top.linkTo}`)}
+            onClick={() => {
+              setTransitionUp(true);
+              clickHandler(`/${top.linkTo}`);
+            }}
           >
             <motion.button
               className={multi(classes.scrollBtn, classes.scrollUp)}
@@ -169,7 +172,10 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             initial={["downInitial", "buttonInitial"]}
             animate="buttonVisible"
             whileHover="downArrowHover"
-            onClick={() => clickHandler(`/${bottom.linkTo}`)}
+            onClick={() => {
+              setTransitionUp(false);
+              clickHandler(`/${bottom.linkTo}`);
+            }}
           >
             <motion.button
               className={multi(classes.scrollBtn, classes.scrollDown)}
