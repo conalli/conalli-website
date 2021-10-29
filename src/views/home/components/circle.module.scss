@@ -1,5 +1,4 @@
 .circle {
-  width: 100%;
   clip-path: circle(40%);
 
   &:hover .circleText {
@@ -16,6 +15,12 @@
 
   @media screen and (min-width: 1500px) {
     clip-path: circle(50%);
+  }
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      clip-path: none;
+    }
   }
 
   svg {
