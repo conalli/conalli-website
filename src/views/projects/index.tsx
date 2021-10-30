@@ -74,7 +74,8 @@ export const Projects: React.FC = () => {
       }}
     >
       <div className={classes.allProjectsContainer}>
-        <motion.div
+        {/* TODO: Make projects section more intuitive */}
+        {/* <motion.div
           className={classes.mainContent}
           variants={initialLeft}
           initial="initial"
@@ -225,7 +226,7 @@ export const Projects: React.FC = () => {
           >
             Away Days
           </motion.button>
-        </motion.div>
+        </motion.div> */}
         <motion.div
           className={classes.pageNav}
           variants={initialLeft}
