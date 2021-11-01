@@ -7,6 +7,7 @@ import { motion, Variants } from "framer-motion";
 import { TransitionOne } from "./transitionComponents/TransitionOne";
 import { TransitionTwo } from "./transitionComponents/TransitionTwo";
 import { useState } from "react";
+import { useViewportDimensions } from "../utils/useViewportDimensions";
 
 export type ViewLayoutScroll = {
   linkTo: string;
@@ -28,6 +29,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
   children,
 }) => {
   const [transitionUp, setTransitionUp] = useState(false);
+  const { viewportWidth } = useViewportDimensions();
   const contentHeight = top && bottom ? "90%" : "95%";
   const contentTransitionDir = transitionUp ? "150vh" : "-150vh";
 
@@ -143,16 +145,17 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
         <motion.div
           className={classes.content}
           style={{ height: contentHeight }}
-          drag="y"
-          dragConstraints={{ top: 5, bottom: 5 }}
+          drag={viewportWidth > 700 && "y"}
+          dragConstraints={viewportWidth > 700 && { top: 5, bottom: 5 }}
           onDrag={(_e, info) => {
-            console.log(info.delta.y);
-            if (bottom && info.delta.y < -35) {
-              setTransitionUp(false);
-              clickHandler(`/${bottom.linkTo}`);
-            } else if (top && info.delta.y > 35) {
-              setTransitionUp(true);
-              clickHandler(`/${top.linkTo}`);
+            if (viewportWidth > 700) {
+              if (bottom && info.delta.y < -35) {
+                setTransitionUp(false);
+                clickHandler(`/${bottom.linkTo}`);
+              } else if (top && info.delta.y > 35) {
+                setTransitionUp(true);
+                clickHandler(`/${top.linkTo}`);
+              }
             }
           }}
         >

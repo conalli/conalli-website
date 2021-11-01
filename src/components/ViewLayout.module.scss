@@ -71,8 +71,12 @@
   .content {
     width: 100%;
     display: flex;
+    overflow-y: auto;
     &:active {
       cursor: grabbing;
+    }
+    @media screen and (min-width: 700px) {
+      overflow-y: hidden;
     }
   }
 
