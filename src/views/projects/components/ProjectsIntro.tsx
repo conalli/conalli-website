@@ -52,7 +52,6 @@ export const ProjectsIntroViz: React.FC<ProjectsIntroVizProps> = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <h3 className={classes.vizSubtitle}>Projects:</h3>
       <ul className={classes.projectsIntroList}>
         <li>
           <motion.button
