@@ -54,6 +54,20 @@ export const Projects: React.FC = () => {
     },
   };
 
+  const initialUp: Variants = {
+    initial: {
+      y: "100vh",
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <ViewLayout
       top={{
@@ -74,67 +88,105 @@ export const Projects: React.FC = () => {
       }}
     >
       <div className={classes.allProjectsContainer}>
-        {/* TODO: Make projects section more intuitive */}
-        {/* <motion.div
-          className={classes.mainContent}
-          variants={initialLeft}
-          initial="initial"
-          animate="animate"
-        >
-          {projectPage == 0 && (
-            <div className={multi(classes.mainContent, classes.projects)}>
-              <ProjectsIntro />
-            </div>
-          )}
-          {projectPage == 1 && (
-            <div className={multi(classes.mainContent, classes.myNiwaMain)}>
-              <MyNiwaDetails />
-            </div>
-          )}
-          {projectPage == 2 && (
-            <div className={multi(classes.mainContent, classes.bookshelfMain)}>
-              <BookshelfDetails />
-            </div>
-          )}
-          {projectPage == 3 && (
-            <div className={multi(classes.mainContent, classes.awayDaysMain)}>
-              <AwayDaysDetails />
-            </div>
-          )}
-        </motion.div>
-        <motion.div
-          className={classes.projectViz}
-          variants={initialDown}
-          initial="initial"
-          animate="animate"
-        >
-          {projectPage == 0 && (
-            <div className={classes.projectsIntroViz}>
-              <ProjectsIntroViz
-                clickHandler={clickHandler}
-                setShowTech={setShowTech}
-              />
-            </div>
-          )}
-          {projectPage == 1 && (
-            <div className={multi(classes.project1)}>
-              <MyNiwaViz />
-            </div>
-          )}
-          {projectPage == 2 && (
-            <div className={multi(classes.project2)}>
-              <BookshelfViz />
-            </div>
-          )}
-          {projectPage == 3 && (
-            <div className={multi(classes.project3)}>
-              <AwayDaysViz />
-            </div>
-          )}
-        </motion.div>
+        <div className={classes.projectNav}>
+          <motion.div
+            className={classes.projectNav}
+            variants={initialLeft}
+            initial="initial"
+            animate="animate"
+          >
+            <motion.button
+              className={projectPage == 0 ? classes.selected : undefined}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                setShowTech(mainTechStack);
+                clickHandler(0);
+              }}
+            >
+              Projects
+            </motion.button>
+            <motion.button
+              className={projectPage == 1 ? classes.selected : undefined}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                setShowTech(myNiwaTechStack);
+                clickHandler(1);
+              }}
+            >
+              My Niwa
+            </motion.button>
+            <motion.button
+              className={projectPage == 2 ? classes.selected : undefined}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                setShowTech(bookshelfTechStack);
+                clickHandler(2);
+              }}
+            >
+              Bookshelf
+            </motion.button>
+            <motion.button
+              className={projectPage == 3 ? classes.selected : undefined}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                setShowTech(awayDaysTechStack);
+                clickHandler(3);
+              }}
+            >
+              AwayDays
+            </motion.button>
+          </motion.div>
+        </div>
+        <div className={classes.projectMain}>
+          <motion.div
+            className={classes.mainContent}
+            variants={initialDown}
+            initial="initial"
+            animate="animate"
+          >
+            {projectPage == 0 && <ProjectsIntro />}
+            {projectPage == 1 && <MyNiwaDetails />}
+            {projectPage == 2 && <BookshelfDetails />}
+            {projectPage == 3 && <AwayDaysDetails />}
+          </motion.div>
+          <motion.div
+            className={classes.projectViz}
+            variants={initialDown}
+            initial="initial"
+            animate="animate"
+          >
+            {projectPage == 0 && (
+              <div className={classes.projectsIntroViz}>
+                <ProjectsIntroViz
+                  clickHandler={clickHandler}
+                  setShowTech={setShowTech}
+                />
+              </div>
+            )}
+            {projectPage == 1 && (
+              <div className={multi(classes.project1)}>
+                <MyNiwaViz />
+              </div>
+            )}
+            {projectPage == 2 && (
+              <div className={multi(classes.project2)}>
+                <BookshelfViz />
+              </div>
+            )}
+            {projectPage == 3 && (
+              <div className={multi(classes.project3)}>
+                <AwayDaysViz />
+              </div>
+            )}
+          </motion.div>
+        </div>
         <motion.div
           className={classes.techStack}
-          variants={initialDown}
+          variants={initialUp}
           initial="initial"
           animate="animate"
         >
@@ -180,53 +232,6 @@ export const Projects: React.FC = () => {
             </li>
           </ul>
         </motion.div>
-        <motion.div
-          className={classes.projectNav}
-          variants={initialDown}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => {
-              setShowTech(mainTechStack);
-              clickHandler(0);
-            }}
-          >
-            Projects
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => {
-              setShowTech(myNiwaTechStack);
-              clickHandler(1);
-            }}
-          >
-            My Niwa
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => {
-              setShowTech(bookshelfTechStack);
-              clickHandler(2);
-            }}
-          >
-            Bookshelf
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => {
-              setShowTech(awayDaysTechStack);
-              clickHandler(3);
-            }}
-          >
-            Away Days
-          </motion.button>
-        </motion.div> */}
         <motion.div
           className={classes.pageNav}
           variants={initialLeft}
