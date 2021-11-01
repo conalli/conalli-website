@@ -8,9 +8,9 @@ export const AwayDaysDetails: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <h1 className={classes.detailsTitle}>Away Days API</h1>
+      <h1 className={classes.detailsTitle}>AwayDays API</h1>
       <p className={classes.detailsText}>
-        Away Days is an API built to help sports fans when following their team
+        AwayDays is an API built to help sports fans when following their team
         away from home.
       </p>
       <p className={classes.detailsText}>
@@ -18,10 +18,10 @@ export const AwayDaysDetails: React.FC = () => {
         users information about their host city while their team is on the road.
       </p>
       <p className={classes.detailsText}>
-        Away Days is built upon a GraphQL server, utilising Apollo, and
-        connected to a Postgres database through the Prisma ORM. GraphQL was a
-        great choice as it allows users to retrieve the data that they want
-        without any overfetching.
+        AwayDays is built upon a GraphQL server, utilising Apollo, and connected
+        to a Postgres database through the Prisma ORM. GraphQL was a great
+        choice as it allows users to retrieve the data that they want without
+        any overfetching.
       </p>
     </motion.div>
   );
@@ -37,7 +37,7 @@ export const AwayDaysViz: React.FC = () => {
       <h3 className={classes.vizSubtitle}>Repository</h3>
       <ul>
         <li>
-          <a href="https://github.com/conalli/awaydays-api">Away Days API</a>
+          <a href="https://github.com/conalli/awaydays-api">AwayDays API</a>
         </li>
       </ul>
     </motion.div>
