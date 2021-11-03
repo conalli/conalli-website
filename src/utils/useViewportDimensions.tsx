@@ -13,6 +13,7 @@ export const useViewportDimensions = () => {
     updateViewportDimensions();
 
     window.addEventListener("resize", updateViewportDimensions);
+    return () => window.removeEventListener("resize", updateViewportDimensions);
   }, [window.innerHeight, window.innerWidth]);
 
   return { viewportWidth, viewportHeight };
