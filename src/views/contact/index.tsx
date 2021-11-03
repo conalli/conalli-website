@@ -94,8 +94,10 @@ export const Contact: React.FC = () => {
           <section>
             <p>
               I am an engineer originally from the UK, but currently based in
-              Tokyo, Japan. I like JavaScript, TypeScript, React and Go... not
-              necessarily in that order.
+              Tokyo. I came to Japan for the same reasons I am interested in
+              technology... to learn new things and challenge myself. I like
+              JavaScript, TypeScript, React and Go... not necessarily in that
+              order.
             </p>
           </section>
           <Nav />
