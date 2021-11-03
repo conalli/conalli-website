@@ -10,6 +10,12 @@ export const Nav: React.FC = () => {
         whileHover={{ scale: 1.2, originX: 0 }}
         whileTap={{ scale: 0.9 }}
       >
+        <Link to="/">Top</Link>
+      </motion.li>
+      <motion.li
+        whileHover={{ scale: 1.2, originX: 0 }}
+        whileTap={{ scale: 0.9 }}
+      >
         <Link to="/projects">Projects</Link>
       </motion.li>
       <motion.li
