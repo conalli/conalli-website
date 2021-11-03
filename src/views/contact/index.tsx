@@ -135,7 +135,6 @@ export const Contact: React.FC = () => {
                   value={messageText.name}
                   onChange={(e) =>
                     setMessageText((prev) => {
-                      console.log(form.current);
                       return {
                         ...prev,
                         name: e.target.value,
@@ -155,7 +154,6 @@ export const Contact: React.FC = () => {
                   value={messageText.email}
                   onChange={(e) =>
                     setMessageText((prev) => {
-                      console.log(form.current);
                       return {
                         ...prev,
                         email: e.target.value,
@@ -175,7 +173,6 @@ export const Contact: React.FC = () => {
                   value={messageText.message}
                   onChange={(e) =>
                     setMessageText((prev) => {
-                      console.log(form.current);
                       return {
                         ...prev,
                         message: e.target.value,
