@@ -86,7 +86,7 @@ export const Home: React.FC = () => {
           animate="visible"
           exit="exit"
         >
-          A software engineer based in Tokyo, Japan.
+          A software engineer based in Tokyo.
         </motion.h3>
         <div className={classes.japaneseTitlesContainer}>
           <motion.h1
