@@ -1,6 +1,6 @@
 import classes from "./home.module.scss";
 import { Circle } from "./components/Circle";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ViewLayout } from "../../components/ViewLayout";
 import { Nav } from "../../components/Nav";
@@ -9,12 +9,17 @@ import { useViewportDimensions } from "../../utils/useViewportDimensions";
 export const Home: React.FC = () => {
   const { viewportWidth, viewportHeight } = useViewportDimensions();
   const [showSub, setShowSub] = useState(viewportWidth > 375);
+  const [showAboutMe, setShowAboutMe] = useState(true);
+  const [initial, setInitial] = useState(true);
 
   useEffect(() => {
     setShowSub(() => {
       return viewportWidth > 375 && viewportHeight > 675;
     });
+    setInitial(false);
   }, []);
+
+  const aboutMeClick = () => setShowAboutMe(!showAboutMe);
 
   const transitionTitle: Variants = {
     initial: {
@@ -79,15 +84,46 @@ export const Home: React.FC = () => {
         >
           Hi, I'm Conall;
         </motion.h1>
-        <motion.h3
-          className={classes.subTitle}
-          variants={transitionTitle}
-          initial="initial"
-          animate="visible"
-          exit="exit"
-        >
-          A software engineer based in Tokyo.
-        </motion.h3>
+        <div className={classes.subTitleContainer}>
+          <motion.h3
+            className={classes.subTitle}
+            variants={transitionTitle}
+            initial="initial"
+            animate="visible"
+            exit="exit"
+          >
+            A software engineer based in Tokyo.
+            <br />
+          </motion.h3>
+          <motion.span
+            onClick={aboutMeClick}
+            whileHover={{ scale: 1.1, originX: 0 }}
+            whileTap={{ scale: 0.9 }}
+            variants={transitionTitle}
+            initial="initial"
+            animate="visible"
+            exit="exit"
+          >
+            About Me:
+          </motion.span>
+        </div>
+        {showAboutMe && (
+          <motion.p
+            className={classes.aboutMe}
+            initial={{ opacity: 0, y: -100 }}
+            animate={
+              initial
+                ? { opacity: 1, y: 0, transition: { delay: 0.85 } }
+                : { opacity: 1, y: 0 }
+            }
+          >
+            I came to Japan for many of the same reasons that I am interested in
+            technology - to learn new things and challenge myself. <br />
+            <br />I enjoy collaborating with others and working across the
+            stack. Some of my current favourite techs are React, TypeScript and
+            Go.
+          </motion.p>
+        )}
         <div className={classes.japaneseTitlesContainer}>
           <motion.h1
             className={classes.japaneseTitle}
