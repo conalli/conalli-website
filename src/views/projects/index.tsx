@@ -104,7 +104,7 @@ export const Projects: React.FC = () => {
                 clickHandler(0);
               }}
             >
-              Projects
+              Overview
             </motion.button>
             <motion.button
               className={projectPage == 1 ? classes.selected : undefined}
@@ -191,6 +191,9 @@ export const Projects: React.FC = () => {
           animate="animate"
         >
           <ul>
+            <li className={classes.techStackTitle}>
+              <h3>Tech Stack</h3>
+            </li>
             <li style={showTech.css ? showSVG : hideSVG}>
               <TechStack.CSSSVG />
             </li>
