@@ -10,18 +10,19 @@ export const AwayDaysDetails: React.FC = () => {
     >
       <h1 className={classes.detailsTitle}>AwayDays API</h1>
       <p className={classes.detailsText}>
-        AwayDays is an API built to help sports fans when following their team
+        AwayDays is an API built to help sports fans while following their team
         away from home.
       </p>
       <p className={classes.detailsText}>
-        It was initially built for fans of Japan's J1 soccer league team, giving
-        users information about their host city while their team is on the road.
+        It was initially built as a way to give users information about their
+        host city while they're on the road.
       </p>
       <p className={classes.detailsText}>
         AwayDays is built upon a GraphQL server, utilising Apollo, and connected
         to a Postgres database through the Prisma ORM. GraphQL was a great
-        choice as it allows users to retrieve the data that they want without
-        any overfetching.
+        choice as it allows users to retrieve only the data that they want
+        without overfetching, and using it in conjuction with Apollo and Prisma
+        was a very smooth experience.
       </p>
     </motion.div>
   );
@@ -37,7 +38,39 @@ export const AwayDaysViz: React.FC = () => {
       <h3 className={classes.vizSubtitle}>Repository</h3>
       <ul>
         <li>
-          <a href="https://github.com/conalli/awaydays-api">AwayDays API</a>
+          <a href="https://github.com/conalli/awaydays-api" target="_blank">
+            AwayDays API
+          </a>
+        </li>
+        <br />
+        <li>
+          <h3 className={classes.vizSubtitle}>Useful links:</h3>
+        </li>
+        <li>
+          <a href="https://graphql.org/learn" target="_blank">
+            Introduction to GraphQL
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.apollographql.com/docs/apollo-server/"
+            target="_blank"
+          >
+            Apollo Server documentation
+          </a>
+        </li>
+        <li>
+          <a href="https://www.prisma.io/docs/getting-started" target="_blank">
+            Getting started with Prisma
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.postgresql.org/docs/14/index.html"
+            target="_blank"
+          >
+            Postgres docs
+          </a>
         </li>
       </ul>
     </motion.div>

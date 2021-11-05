@@ -21,8 +21,8 @@ export const MyNiwaDetails: React.FC = () => {
       <p className={classes.detailsText}>
         Built in a small group of five developers. My main role was on the
         frontend team, tasked with designing and building out the UI using
-        React, Material UI and CSS modules, using Framer Motion for interactions
-        and animations and Recoil for state management.
+        React, Material UI and CSS modules, Framer Motion for interactions/
+        animations and Recoil for state management.
       </p>
     </motion.div>
   );
@@ -44,16 +44,24 @@ export const MyNiwaViz: React.FC = () => {
         allowFullScreen
       ></iframe>
       <h3 className={classes.vizSubtitle}>Try it yourself at:</h3>
-      <a href="https://myniwa.netlify.app">My Niwa</a>
+      <a href="https://myniwa.netlify.app" target="_blank">
+        My Niwa
+      </a>
       <h3 className={classes.vizSubtitle}>Repositories</h3>
       <ul>
         <li>
-          <a href="https://github.com/ice-cream-the-fat-cat/my-niwa-frontend">
+          <a
+            href="https://github.com/ice-cream-the-fat-cat/my-niwa-frontend"
+            target="_blank"
+          >
             Frontend
           </a>
         </li>
         <li>
-          <a href="https://github.com/ice-cream-the-fat-cat/my-niwa-backend">
+          <a
+            href="https://github.com/ice-cream-the-fat-cat/my-niwa-backend"
+            target="_blank"
+          >
             Backend
           </a>
         </li>

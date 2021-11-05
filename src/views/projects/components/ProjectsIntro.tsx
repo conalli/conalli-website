@@ -17,7 +17,7 @@ export const ProjectsIntro: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <h1 className={classes.detailsTitle}>Projects</h1>
+      <h1 className={classes.detailsTitle}>Overview</h1>
       <p className={classes.detailsText}>
         Feel free to take a look through a selection of my projects. While each
         project has been built utilising a number of different technologies, my
@@ -52,6 +52,7 @@ export const ProjectsIntroViz: React.FC<ProjectsIntroVizProps> = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <h3>Click a project to learn more:</h3>
       <ul className={classes.projectsIntroList}>
         <li>
           <motion.button
