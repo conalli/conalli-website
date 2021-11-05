@@ -3,8 +3,8 @@
   flex-direction: column;
   padding: 0 5%;
   .vizSubtitle {
-    font-size: clamp(1.25rem, 3vw + 0.25rem, 2.5rem);
-    margin: 2% 0;
+    font-size: clamp(1.25rem, 3vw + 0.25rem, 2rem);
+    margin: 0.25rem 0;
   }
   .vizText {
     font-size: clamp(1rem, 1vw + 0.125rem, 1.5rem);
@@ -18,8 +18,6 @@
   .projectsIntroList {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     button {
       background-color: transparent;
@@ -41,6 +39,7 @@
 
       @media screen and (min-width: 700px) {
         flex-direction: row;
+
         img {
           width: 358px;
           height: 158px;

@@ -5,6 +5,15 @@
   flex-direction: column;
   overflow: hidden;
 
+  .title {
+    font-size: clamp(3rem, 3rem + 2vw, 5rem);
+    color: black;
+    margin: 2vh 0 0 5vw;
+    span {
+      color: rgba(253, 74, 74, 0.8);
+    }
+  }
+
   .projectNav {
     grid-column: 2;
     grid-row: 2;
@@ -12,7 +21,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 0.5rem;
-    padding-top: 5%;
+    padding-top: 1vh;
 
     button {
       color: #ffffff80;
@@ -114,7 +123,7 @@
   }
 
   .pageNav {
-    padding: 5%;
+    padding: 0 5%;
   }
 
   @media screen and (min-width: 700px) {
@@ -122,12 +131,20 @@
     width: 100%;
     display: grid;
     grid-template-columns: 5% 1fr 8fr 5%;
-    grid-template-rows: 5% 6fr 2fr 5% 10%;
+    grid-template-rows: 5% max-content 2fr 5% 10%;
     overflow: hidden;
+
+    .title {
+      grid-column: 2 / 4;
+      grid-row: 1 / 3;
+      justify-self: start;
+      align-self: center;
+      margin: 0 0 0.5rem;
+    }
 
     .projectNav {
       grid-column: 2;
-      grid-row: 2;
+      grid-row: 3;
       display: flex;
       flex-direction: column;
       justify-content: start;
@@ -148,7 +165,7 @@
 
     .projectMain {
       grid-column: 3;
-      grid-row: 2 / 4;
+      grid-row: 3 / 5;
       display: grid;
       grid-template-columns: 1.5fr 3fr;
       grid-template-rows: 1fr;
@@ -171,7 +188,7 @@
 
     .techStackTitle {
       grid-column: 3;
-      grid-row: 3;
+      grid-row: 4;
       justify-self: center;
       align-self: end;
     }
@@ -185,7 +202,7 @@
 
     .pageNav {
       grid-column: 2;
-      grid-row: 3 / 5;
+      grid-row: 4;
       align-self: end;
       padding: 0;
     }

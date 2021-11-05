@@ -88,6 +88,14 @@ export const Projects: React.FC = () => {
       }}
     >
       <div className={classes.allProjectsContainer}>
+        <motion.h1
+          className={classes.title}
+          variants={initialDown}
+          initial="initial"
+          animate="animate"
+        >
+          Projects<span>.</span>
+        </motion.h1>
         <div className={classes.projectNav}>
           <motion.div
             className={classes.projectNav}
