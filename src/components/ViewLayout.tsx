@@ -28,6 +28,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
   bottom,
   children,
 }) => {
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [transitionUp, setTransitionUp] = useState(false);
   const { viewportWidth } = useViewportDimensions();
   const contentHeight = top && bottom ? "90%" : "95%";
@@ -117,6 +118,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             animate="buttonVisible"
             whileHover="upArrowHover"
             onClick={() => {
+              setIsTransitioning(true);
               setTransitionUp(true);
               clickHandler(`/${top.linkTo}`);
             }}
@@ -150,9 +152,11 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           onDrag={(_e, info) => {
             if (viewportWidth > 700) {
               if (bottom && info.delta.y < -35) {
+                setIsTransitioning(true);
                 setTransitionUp(false);
                 clickHandler(`/${bottom.linkTo}`);
               } else if (top && info.delta.y > 35) {
+                setIsTransitioning(true);
                 setTransitionUp(true);
                 clickHandler(`/${top.linkTo}`);
               }
@@ -170,6 +174,7 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
             animate="buttonVisible"
             whileHover="downArrowHover"
             onClick={() => {
+              setIsTransitioning(true);
               setTransitionUp(false);
               clickHandler(`/${bottom.linkTo}`);
             }}
@@ -196,22 +201,26 @@ export const ViewLayout: React.FC<ViewLayoutProps> = ({
           </motion.div>
         )}
       </motion.div>
-      <TransitionOne
-        up={transitionUp}
-        transitionBackground={
-          transitionUp
-            ? top?.transitionBackground.one
-            : bottom?.transitionBackground.one
-        }
-      />
-      <TransitionTwo
-        up={transitionUp}
-        transitionBackground={
-          transitionUp
-            ? top?.transitionBackground.two
-            : bottom?.transitionBackground.two
-        }
-      />
+      {isTransitioning && (
+        <TransitionOne
+          up={transitionUp}
+          transitionBackground={
+            transitionUp
+              ? top?.transitionBackground.one
+              : bottom?.transitionBackground.one
+          }
+        />
+      )}
+      {isTransitioning && (
+        <TransitionTwo
+          up={transitionUp}
+          transitionBackground={
+            transitionUp
+              ? top?.transitionBackground.two
+              : bottom?.transitionBackground.two
+          }
+        />
+      )}
     </div>
   );
 };
