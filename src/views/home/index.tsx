@@ -9,12 +9,12 @@ import { TransitionProvider } from "../../utils/useTransition";
 
 export const Home: React.FC = () => {
   const { viewportWidth, viewportHeight } = useViewportDimensions();
-  const [showSub, setShowSub] = useState(viewportWidth > 375);
+  const [showJP, setShowJP] = useState(viewportWidth > 375);
   const [showAboutMe, setShowAboutMe] = useState(true);
   const [initial, setInitial] = useState(true);
 
   useEffect(() => {
-    setShowSub(() => {
+    setShowJP(() => {
       return viewportWidth > 375 && viewportHeight > 675;
     });
     setInitial(false);
@@ -126,17 +126,17 @@ export const Home: React.FC = () => {
               and Go.
             </motion.p>
           )}
-          <div className={classes.japaneseTitlesContainer}>
-            <motion.h1
-              className={classes.japaneseTitle}
-              variants={transitionSubtitle}
-              initial="initial"
-              animate="visible"
-              exit="exit"
-            >
-              こんにちは、コナルです。
-            </motion.h1>
-            {showSub && (
+          {showJP && (
+            <div className={classes.japaneseTitlesContainer}>
+              <motion.h1
+                className={classes.japaneseTitle}
+                variants={transitionSubtitle}
+                initial="initial"
+                animate="visible"
+                exit="exit"
+              >
+                こんにちは、コナルです。
+              </motion.h1>
               <motion.h3
                 className={classes.japaneseSubtitle}
                 variants={transitionSubtitle}
@@ -146,8 +146,8 @@ export const Home: React.FC = () => {
               >
                 東京で活動しているエンジニア
               </motion.h3>
-            )}
-          </div>
+            </div>
+          )}
           <motion.nav
             className={classes.nav}
             variants={transitionCircle}
