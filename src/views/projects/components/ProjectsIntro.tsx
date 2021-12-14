@@ -1,5 +1,5 @@
 import myNiwaLogo from "../../../assets/myniwa.svg";
-import bookshelfLogo from "../../../assets/bookshelflogo.png";
+import bookshelfLogo from "../../../assets/bookshelf-logo-github.png";
 import classes from "./projectStyles.module.scss";
 import { multi } from "../../../utils/multiClass";
 import {
