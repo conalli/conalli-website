@@ -30,6 +30,7 @@ export const ProjectsIntro: React.FC = () => {
         <li>CSS/SASS</li>
         <li>Node.js</li>
         <li>Express</li>
+        <li>Go</li>
         <li>Postgres</li>
         <li>MongoDB</li>
       </ul>
