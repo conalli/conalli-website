@@ -210,9 +210,6 @@ export const Projects: React.FC = () => {
               <li style={showTech.express ? showSVG : hideSVG}>
                 <TechStack.ExpressSVG />
               </li>
-              <li style={showTech.flask ? showSVG : hideSVG}>
-                <TechStack.FlaskSVG />
-              </li>
               <li style={showTech.go ? showSVG : hideSVG}>
                 <TechStack.GoSVG />
               </li>
@@ -231,14 +228,8 @@ export const Projects: React.FC = () => {
               <li style={showTech.psql ? showSVG : hideSVG}>
                 <TechStack.PSQLSVG />
               </li>
-              <li style={showTech.python ? showSVG : hideSVG}>
-                <TechStack.PythonSVG />
-              </li>
               <li style={showTech.react ? showSVG : hideSVG}>
                 <TechStack.ReactSVG />
-              </li>
-              <li style={showTech.rust ? showSVG : hideSVG}>
-                <TechStack.RustSVG />
               </li>
               <li style={showTech.ts ? showSVG : hideSVG}>
                 <TechStack.TSSVG />

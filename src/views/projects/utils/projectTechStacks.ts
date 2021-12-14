@@ -1,32 +1,26 @@
 export type TechStackList = {
   css: boolean;
   express: boolean;
-  flask: boolean;
   go: boolean;
   gql: boolean;
   js: boolean;
   material: boolean;
   mongo: boolean;
   psql: boolean;
-  python: boolean;
   react: boolean;
-  rust: boolean;
   ts: boolean;
 };
 
 export const mainTechStack = {
   css: true,
   express: true,
-  flask: false,
-  go: false,
-  gql: false,
+  go: true,
+  gql: true,
   js: true,
-  material: false,
+  material: true,
   mongo: true,
   psql: true,
-  python: false,
   react: true,
-  rust: false,
   ts: true,
 };
 
@@ -59,10 +53,10 @@ export const myNiwaTechStack = {
 
 export const bookshelfTechStack = {
   ...noTechStack,
-  python: true,
-  flask: true,
+  go: true,
+  react: true,
   mongo: true,
-  rust: true,
+  ts: true,
 }
 
 export const awayDaysTechStack = {
