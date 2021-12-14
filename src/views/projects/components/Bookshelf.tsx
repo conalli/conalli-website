@@ -19,6 +19,14 @@ export const BookshelfDetails: React.FC = () => {
         Bookshelf then utilises the browsers in-built custom search engine to
         redirect to the Bookshelf server whenever the shortcut is used.
       </p>
+      <h4>Main techs used:</h4>
+      <ul>
+        <li>TypeScript</li>
+        <li>React</li>
+        <li>Chakra UI</li>
+        <li>Go</li>
+        <li>MongoDB</li>
+      </ul>
     </motion.div>
   );
 };
@@ -39,19 +47,25 @@ export const BookshelfViz: React.FC = () => {
         allowFullScreen
       ></iframe>
       <h3 className={classes.vizSubtitle}>Try it yourself at:</h3>
-      <a href="https://github.com/conalli/bookshelf-server" target="_blank">
-        Bookshelf - (redirects to repo)
+      <a href="https://web-bookshelf.netlify.app" target="_blank">
+        Bookshelf
       </a>
       <h3 className={classes.vizSubtitle}>Repositories</h3>
       <ul>
         <li>
-          <a href="https://github.com/conalli/bookshelf-cli" target="_blank">
-            CLI
+          <a
+            href="https://github.com/conalli/bookshelf-client-web"
+            target="_blank"
+          >
+            Web Client
           </a>
         </li>
         <li>
-          <a href="https://github.com/conalli/bookshelf-server" target="_blank">
-            Server
+          <a
+            href="https://github.com/conalli/bookshelf-backend"
+            target="_blank"
+          >
+            Backend
           </a>
         </li>
       </ul>

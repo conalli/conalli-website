@@ -10,12 +10,8 @@ export const AwayDaysDetails: React.FC = () => {
     >
       <h1 className={classes.detailsTitle}>AwayDays API</h1>
       <p className={classes.detailsText}>
-        AwayDays is an API built to help sports fans while following their team
-        away from home.
-      </p>
-      <p className={classes.detailsText}>
-        It was initially built as a way to give users information about their
-        host city while they're on the road.
+        AwayDays is an API built as a way to give sports fans information about
+        their host city while they're on the road.
       </p>
       <p className={classes.detailsText}>
         AwayDays is built upon a GraphQL server, utilising Apollo, and connected
@@ -24,6 +20,15 @@ export const AwayDaysDetails: React.FC = () => {
         without overfetching, and using it in conjuction with Apollo and Prisma
         was a very smooth experience.
       </p>
+      <h4>Main techs used:</h4>
+      <ul>
+        <li>TypeScript</li>
+        <li>JavaScript</li>
+        <li>GraphQL</li>
+        <li>Prisma</li>
+        <li>Apollo</li>
+        <li>Postgres</li>
+      </ul>
     </motion.div>
   );
 };

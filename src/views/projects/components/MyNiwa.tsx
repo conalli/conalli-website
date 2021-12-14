@@ -11,12 +11,9 @@ export const MyNiwaDetails: React.FC = () => {
       <h1 className={classes.detailsTitle}>My Niwa</h1>
       <p className={classes.detailsText}>
         My Niwa is an application designed to help people to start and maintain
-        new habits.
-      </p>
-      <p className={classes.detailsText}>
-        By creating a "Niwa" - a personal garden - and tending to it every day -
-        maintaining their habits - the user will start to grow alongside their
-        flowers.
+        new habits. By creating a "Niwa" - a personal garden - and tending to it
+        every day - maintaining their habits - the user will start to grow
+        alongside their flowers.
       </p>
       <p className={classes.detailsText}>
         Built in a small group of five developers. My main role was on the
@@ -24,6 +21,15 @@ export const MyNiwaDetails: React.FC = () => {
         React, Material UI and CSS modules, Framer Motion for interactions/
         animations and Recoil for state management.
       </p>
+      <h4>Main techs used:</h4>
+      <ul>
+        <li>TypeScript</li>
+        <li>React</li>
+        <li>Material UI</li>
+        <li>CSS</li>
+        <li>Go</li>
+        <li>MongoDB</li>
+      </ul>
     </motion.div>
   );
 };
