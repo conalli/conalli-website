@@ -1,4 +1,4 @@
-import myNiwaLogo from "../../../assets/myniwa.svg";
+import myNiwaLogo from "../../../assets/myniwa-logo.png";
 import bookshelfLogo from "../../../assets/bookshelf-logo-github.png";
 import classes from "./projectStyles.module.scss";
 import { multi } from "../../../utils/multiClass";
