@@ -40,7 +40,7 @@ export const BookshelfViz: React.FC = () => {
     >
       <h3 className={classes.vizSubtitle}>Project Demonstration</h3>
       <iframe
-        src="https://www.youtube.com/embed/_ou8IDz20h0?start=1826"
+        src="https://www.youtube.com/embed/IggkwpGbFIs"
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
