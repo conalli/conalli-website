@@ -47,16 +47,13 @@ export const BookshelfViz: React.FC = () => {
         allowFullScreen
       ></iframe>
       <h3 className={classes.vizSubtitle}>Try it yourself at:</h3>
-      <a href="https://web-bookshelf.netlify.app" target="_blank">
+      <a href="hhttps://bookshelf-web.vercel.app/" target="_blank">
         Bookshelf
       </a>
       <h3 className={classes.vizSubtitle}>Repositories</h3>
       <ul>
         <li>
-          <a
-            href="https://github.com/conalli/bookshelf-client-web"
-            target="_blank"
-          >
+          <a href="https://github.com/conalli/bookshelf-web" target="_blank">
             Web Client
           </a>
         </li>
