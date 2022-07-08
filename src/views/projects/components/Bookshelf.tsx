@@ -22,8 +22,8 @@ export const BookshelfDetails: React.FC = () => {
       <h4>Main techs used:</h4>
       <ul>
         <li>TypeScript</li>
-        <li>React</li>
-        <li>Chakra UI</li>
+        <li>Next.js</li>
+        <li>Tailwind CSS</li>
         <li>Go</li>
         <li>MongoDB</li>
       </ul>
