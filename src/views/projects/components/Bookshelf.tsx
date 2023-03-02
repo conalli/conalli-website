@@ -26,6 +26,7 @@ export const BookshelfDetails: React.FC = () => {
         <li>Tailwind CSS</li>
         <li>Go</li>
         <li>MongoDB</li>
+        <li>Redis</li>
       </ul>
     </motion.div>
   );
@@ -47,7 +48,7 @@ export const BookshelfViz: React.FC = () => {
         allowFullScreen
       ></iframe>
       <h3 className={classes.vizSubtitle}>Try it yourself at:</h3>
-      <a href="https://bookshelf-web.vercel.app" target="_blank">
+      <a href="https://bookshelf.conalli.info" target="_blank">
         Bookshelf
       </a>
       <h3 className={classes.vizSubtitle}>Repositories</h3>
